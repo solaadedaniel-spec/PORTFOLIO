@@ -151,6 +151,7 @@ const SITE = {
       description: "Baru is a conceptual world I built from scratch: its people, its armour, its rituals and its rulers, all forged in bronze.",
       role: "Creator and art director",
       media: [
+        "https://youtu.be/A4w8fdO0Ly8",
         "images/baru/matriarch.jpg",
         "images/baru/mask.jpg",
         "images/baru/warrior.jpg",
