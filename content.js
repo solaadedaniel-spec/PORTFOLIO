@@ -79,6 +79,9 @@ const SITE = {
        role:        what you did, e.g. "Art director", "Motion designer"
        media:       the pictures and videos shown on the project page, in order.
                     Any file ending in .mp4 is shown as a video with sound.
+                    You can also paste a YouTube or Vimeo link here, e.g.
+                    "https://youtu.be/abc123XYZ00" or "https://vimeo.com/123456789".
+                    Use this for big films (over about 20 MB).
 
      Add a project by copying a whole { ... }, block. Delete one the same way. */
   work: [

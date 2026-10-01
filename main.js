@@ -24,6 +24,14 @@
   const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
   SITE.work.forEach((item) => { item.slug = slug(item.title); });
   const isVideo = (src) => /\.(mp4|webm|mov)(\?|$)/i.test(src);
+  // Turns a YouTube or Vimeo link into an embeddable player address (or null).
+  const embedUrl = (src) => {
+    const yt = src.match(/(?:youtube\.com\/(?:watch\?v=|shorts\/|embed\/)|youtu\.be\/)([\w-]{11})/);
+    if (yt) return "https://www.youtube-nocookie.com/embed/" + yt[1] + "?rel=0";
+    const vm = src.match(/vimeo\.com\/(?:video\/)?(\d+)(?:\/(\w+))?/);
+    if (vm) return "https://player.vimeo.com/video/" + vm[1] + (vm[2] ? "?h=" + vm[2] + "&" : "?") + "dnt=1";
+    return null;
+  };
 
   /* ---------- Intro: rotating discipline word ---------- */
   const rotator = document.getElementById("rotator");
@@ -195,7 +203,17 @@
     const list = item.media && item.media.length ? item.media : [item.video || item.image];
     list.forEach((src, n) => {
       let el;
-      if (isVideo(src)) {
+      const embed = embedUrl(src);
+      if (embed) {
+        el = document.createElement("div");
+        const frame = document.createElement("iframe");
+        frame.src = embed;
+        frame.title = item.title;
+        frame.loading = n > 0 ? "lazy" : "eager";
+        frame.allow = "autoplay; fullscreen; picture-in-picture; encrypted-media";
+        frame.allowFullscreen = true;
+        el.appendChild(frame);
+      } else if (isVideo(src)) {
         el = document.createElement("video");
         el.src = src;
         el.controls = true;
@@ -209,6 +227,7 @@
         if (n > 0) el.loading = "lazy";
       }
       el.className = "project__item reveal";
+      if (embed) el.classList.add("project__embed");
       // First item is full width, the rest sit in pairs. A leftover last item goes full width too.
       if (n === 0 || (n === list.length - 1 && (list.length - 1) % 2 === 1)) el.classList.add("is-wide");
       pMedia.appendChild(el);
@@ -224,6 +243,8 @@
 
   function showHome(anchor) {
     project.querySelectorAll("video").forEach((v) => v.pause());
+    // Stop YouTube/Vimeo players by clearing the project media.
+    if (pMedia.querySelector("iframe")) pMedia.innerHTML = "";
     const wasProject = !project.hidden;
     project.hidden = true;
     home.hidden = false;
