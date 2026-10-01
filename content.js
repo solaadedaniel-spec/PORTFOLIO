@@ -134,7 +134,10 @@ const SITE = {
         "images/delana/white-top-front-web.jpg",
         "images/delana/white-top-web.jpg",
         "images/delana/white-bottom-web.jpg",
-        "images/delana/cross-shoot-july-1cross-shoot-july-2-3.jpg"
+        "images/delana/cross-shoot-july-1cross-shoot-july-2-3.jpg",
+        "images/delana/cheetah-standing.jpg",
+        "images/delana/cheetah-crouch.jpg",
+        "images/delana/pop-up-poster.jpg"
       ]
     },
     {
