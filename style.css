@@ -68,7 +68,7 @@ a { color: inherit; }
 
 /* ---------- Navigation ---------- */
 .nav {
-  position: sticky; top: 0; z-index: 10;
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10;
   display: flex; align-items: center; justify-content: space-between; gap: 1rem;
   height: 4.5rem;
   background: color-mix(in srgb, var(--bg) 84%, transparent);
@@ -301,6 +301,7 @@ video.project__item { width: auto; max-width: 100%; max-height: 85vh; margin-inl
 
 @media (min-width: 1024px) {
   .work__grid { grid-template-columns: repeat(4, 1fr); }
+  .about--no-portrait { grid-template-columns: 1fr !important; }
   .about { grid-template-columns: 4fr 7fr; gap: clamp(3rem, 8vw, 8rem); align-items: start; }
   .about__portrait { position: sticky; top: 6rem; }
 }

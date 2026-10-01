@@ -52,7 +52,8 @@ const SITE = {
   ],
 
   // Your portrait for the About section, e.g. "images/sola.jpg"
-  portrait: "https://picsum.photos/seed/sola-portrait/900/1100",
+  // Leave it as "" to hide the photo until you have one.
+  portrait: "",
 
   // Your bio. Each line in quotes becomes its own paragraph (3 or 4 is ideal).
   // This is a draft in your voice. Rewrite it so it sounds exactly like you.

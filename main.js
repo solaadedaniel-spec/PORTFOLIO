@@ -127,8 +127,13 @@
 
   /* ---------- About ---------- */
   const portrait = document.getElementById("portrait");
-  portrait.src = SITE.portrait;
-  portrait.alt = "Portrait of " + SITE.name;
+  if (SITE.portrait) {
+    portrait.src = SITE.portrait;
+    portrait.alt = "Portrait of " + SITE.name;
+  } else {
+    portrait.closest("figure").hidden = true;
+    document.getElementById("about").classList.add("about--no-portrait");
+  }
 
   const bio = document.getElementById("bio");
   SITE.bio.forEach((line) => {
