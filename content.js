@@ -143,12 +143,15 @@ const SITE = {
     {
       title: "Baru, Age of Bronze",
       discipline: "Design",
-      image: "images/baru/warrior.jpg",
+      image: "images/baru/matriarch.jpg",
       headline: "A world where bronze rules all.",
       description: "Baru is a conceptual world I built from scratch: its people, its armour, its rituals and its rulers, all forged in bronze.",
       role: "Creator and art director",
       media: [
-        "images/baru/warrior.jpg"
+        "images/baru/matriarch.jpg",
+        "images/baru/mask.jpg",
+        "images/baru/warrior.jpg",
+        "images/baru/tunic.jpg"
       ]
     },
     {
