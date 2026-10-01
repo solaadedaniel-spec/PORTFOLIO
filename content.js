@@ -108,7 +108,7 @@ const SITE = {
       video: "videos/chupa-chups/jellies-tvc.mp4",
       headline: "Forever fun, now in jellies.",
       description: "15-second broadcast commercial for Chupa Chups Jellies.",
-      role: "Motion designer",
+      role: "Assistant editor",
       media: ["videos/chupa-chups/jellies-tvc.mp4"]
     },
     {
@@ -116,8 +116,8 @@ const SITE = {
       discipline: "Fashion",
       image: "images/delana/camp-1.jpg",
       headline: "Denim & Leather. Issue 01 for Delana Reigns.",
-      description: "Campaign and lookbook for the Delana Reigns Issue 01 drop: cross-panel leather tops and wide-leg denim, shot against hard black and white walls.",
-      role: "Photographer and editor",
+      description: "Campaign and lookbook for the Delana Reigns Issue 01 drop: cross-panel leather tops and wide-leg denim, shot against hard black and white walls. Plus the Cross Cheetah Print shoot and the poster for the Delana pop-up in Lekki.",
+      role: "Photographer and editor (campaign), art director (pop-up poster)",
       media: [
         "images/delana/sep.jpg",
         "images/delana/camp-1.jpg",
