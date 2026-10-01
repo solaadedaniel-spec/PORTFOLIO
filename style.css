@@ -160,24 +160,24 @@ a { color: inherit; }
 .tile:hover img { transform: scale(1.05); }
 .tile:active { transform: translateY(-1px) scale(0.99); }
 
-/* Title panel that slides up on hover */
+/* Project name fades in over the whole tile, only while the mouse is on it */
 .tile__label {
-  position: absolute; left: 0.6rem; right: 0.6rem; bottom: 0.6rem; z-index: 1;
-  display: grid; gap: 0.1rem;
-  padding: 0.7rem 0.9rem; border-radius: calc(var(--radius) - 6px);
-  background: var(--accent); color: var(--on-accent);
-  opacity: 0; transform: translateY(12px);
-  transition: opacity 0.35s var(--ease), transform 0.45s var(--ease);
+  position: absolute; inset: 0; z-index: 1;
+  display: grid; place-content: center; gap: 0.35rem;
+  padding: 1rem; text-align: center;
+  background: color-mix(in srgb, var(--bg) 62%, transparent);
+  color: var(--text);
+  opacity: 0;
+  transition: opacity 0.35s var(--ease);
 }
-.tile__label strong { font-family: var(--font-display); font-weight: 700; font-size: 1rem; line-height: 1.2; }
-.tile__label span { font-size: 0.8rem; }
-.tile:hover .tile__label, .tile:focus-visible .tile__label { opacity: 1; transform: none; }
-@media (hover: none) {
-  /* Phones and tablets have no hover, so show the title all the time */
-  .tile__label { opacity: 1; transform: none; padding: 0.45rem 0.7rem; }
-  .tile__label span { display: none; }
-  .tile__label strong { font-size: 0.85rem; }
+.tile__label strong {
+  font-family: var(--font-display); font-weight: 700; line-height: 1.1; letter-spacing: -0.02em;
+  font-size: clamp(1.1rem, 1.8vw, 1.5rem); text-wrap: balance;
+  transform: translateY(8px); transition: transform 0.45s var(--ease);
 }
+.tile__label span { font-size: 0.8rem; color: var(--accent); }
+.tile:hover .tile__label, .tile:focus-visible .tile__label { opacity: 1; }
+.tile:hover .tile__label strong, .tile:focus-visible .tile__label strong { transform: none; }
 
 /* ---------- About ---------- */
 .section-title {
@@ -238,6 +238,7 @@ a { color: inherit; }
   font-size: clamp(2.1rem, 5.2vw, 4.25rem); line-height: 1.06; letter-spacing: -0.035em;
 }
 .project__desc { margin: 1.5rem 0 0; max-width: 58ch; color: var(--muted); font-size: 1.125rem; }
+.project__role { margin: 1rem 0 0; font-weight: 500; color: var(--text); }
 .project__media {
   display: grid; gap: clamp(0.75rem, 1.8vw, 1.25rem);
   max-width: 1280px; margin: clamp(2.5rem, 6vw, 4rem) auto 0; padding-inline: var(--gutter);

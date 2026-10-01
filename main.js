@@ -177,6 +177,7 @@
   const pMeta = document.getElementById("project-meta");
   const pHeadline = document.getElementById("project-headline");
   const pDesc = document.getElementById("project-desc");
+  const pRole = document.getElementById("project-role");
   const pMedia = document.getElementById("project-media");
   const pNext = document.getElementById("project-next");
 
@@ -187,6 +188,8 @@
     pHeadline.textContent = item.headline || item.title;
     pDesc.textContent = item.description || "";
     pDesc.hidden = !item.description;
+    pRole.textContent = item.role ? "Role: " + item.role : "";
+    pRole.hidden = !item.role;
     pMedia.innerHTML = "";
     const list = item.media && item.media.length ? item.media : [item.video || item.image];
     list.forEach((src, n) => {

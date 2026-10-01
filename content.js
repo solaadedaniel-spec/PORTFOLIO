@@ -42,10 +42,10 @@ const SITE = {
   brands: [
     { name: "Coca-Cola",    logo: "images/brands/coca-cola.svg" },
     { name: "Chupa Chups",  logo: "images/brands/chupa-chups.svg" },
-    { name: "Hollandia",    logo: "" },
-    { name: "Golden Penny", logo: "" },
-    { name: "TVS",          logo: "" },
-    { name: "SmartCash",    logo: "" },
+    { name: "Hollandia",    logo: "images/brands/hollandia.svg" },
+    { name: "Golden Penny", logo: "images/brands/golden-penny.svg" },
+    { name: "TVS",          logo: "images/brands/tvs.svg" },
+    { name: "SmartCash",    logo: "images/brands/smartcash.svg" },
     { name: "Mr Chef",      logo: "" },
     { name: "The Place",    logo: "" },
     { name: "Delana",       logo: "" }
@@ -73,7 +73,8 @@ const SITE = {
        video:       optional. A video that plays silently on the tile when
                     hovered, e.g. "videos/chupa-chups.mp4"
        headline:    the big sentence at the top of the project page
-       description: a short paragraph about the project (who, what, your role)
+       description: a short paragraph about the project (who it was for, what it was)
+       role:        what you did, e.g. "Art director", "Motion designer"
        media:       the pictures and videos shown on the project page, in order.
                     Any file ending in .mp4 is shown as a video with sound.
 
@@ -85,7 +86,8 @@ const SITE = {
       image: "videos/coca-cola/kindness-day.jpg",
       video: "videos/coca-cola/kindness-day.mp4",
       headline: "Every G has a nickname. What’s yours?",
-      description: "Social films for Share a Coke in Nigeria, built around the nickname bottles: My G, Sabi girl, G.O.A.T, Idan. Cultural moments like International Men’s Day and World Kindness Day, plus rooftop, beach and bestie shots. (Edit this to add your role.)",
+      description: "Social content for Share a Coke in Nigeria, built around the nickname bottles: My G, Sabi girl, G.O.A.T, Idan. Posts for cultural moments like International Men’s Day and World Kindness Day, plus rooftop, beach and bestie moments.",
+      role: "Motion designer",
       media: [
         "videos/coca-cola/kindness-day.mp4",
         "videos/coca-cola/mens-day.mp4",
@@ -103,7 +105,8 @@ const SITE = {
       image: "videos/chupa-chups/jellies-tvc.jpg",
       video: "videos/chupa-chups/jellies-tvc.mp4",
       headline: "Forever fun, now in jellies.",
-      description: "15-second broadcast commercial for Chupa Chups Jellies. (Edit this to add the brief and your role.)",
+      description: "15-second broadcast commercial for Chupa Chups Jellies.",
+      role: "Motion designer",
       media: ["videos/chupa-chups/jellies-tvc.mp4"]
     },
     {
@@ -111,7 +114,8 @@ const SITE = {
       discipline: "Fashion",
       image: "images/delana/camp-1.jpg",
       headline: "Denim & Leather. Issue 01 for Delana Reigns.",
-      description: "Campaign and lookbook for the Delana Reigns Issue 01 drop: cross-panel leather tops and wide-leg denim, shot against hard black and white walls. (Edit this to add your role and the team.)",
+      description: "Campaign and lookbook for the Delana Reigns Issue 01 drop: cross-panel leather tops and wide-leg denim, shot against hard black and white walls.",
+      role: "Photographer and editor",
       media: [
         "images/delana/sep.jpg",
         "images/delana/camp-1.jpg",
@@ -134,6 +138,7 @@ const SITE = {
       image: "images/north-brick/puffer.jpg",
       headline: "What if LEGO and The North Face made a collection together?",
       description: "A spec ad imagining The North Brick: one logo built from both brands, carried across a puffer, a range of backpacks and a buildable mountain set.",
+      role: "Art director",
       media: [
         "images/north-brick/cover.jpg",
         "images/north-brick/logo.jpg",
@@ -150,7 +155,8 @@ const SITE = {
       image: "images/the-place/spida.jpg",
       video: "videos/the-place/pepper-chicken.mp4",
       headline: "With great cravings, comes great responsibility.",
-      description: "Social campaigns for The Place: the Pepper Chicken promo, the Pepperlicious combos and Your Month, Your Meal. (Edit this to add your role.)",
+      description: "Social content for The Place: the Pepper Chicken promo, the Pepperlicious combos and Your Month, Your Meal.",
+      role: "Art director (static) and motion designer (video)",
       media: [
         "images/the-place/spida.jpg",
         "videos/the-place/pepper-chicken.mp4",
@@ -164,7 +170,8 @@ const SITE = {
       image: "videos/hollandia/one-pack.jpg",
       video: "videos/hollandia/one-pack.mp4",
       headline: "1 pack, 3 servings. Made to share.",
-      description: "Animated digital banner for Hollandia Evaporated Milk. (Edit this to add your role.)",
+      description: "Animated digital banner for Hollandia Evaporated Milk.",
+      role: "Motion designer",
       media: ["videos/hollandia/one-pack.mp4"]
     },
     {
@@ -173,7 +180,8 @@ const SITE = {
       image: "videos/smartcash/how-to.jpg",
       video: "videos/smartcash/how-to.mp4",
       headline: "Funding your wallet, in four simple steps.",
-      description: "How-to explainer for SmartCash showing customers how to fund their wallet from any banking app. (Edit this to add your role.)",
+      description: "How-to explainer for SmartCash showing customers how to fund their wallet from any banking app.",
+      role: "Motion designer",
       media: ["videos/smartcash/how-to.mp4"]
     },
     {
@@ -182,7 +190,8 @@ const SITE = {
       image: "videos/onbuddy/film.jpg",
       video: "videos/onbuddy/film.mp4",
       headline: "One workspace for everything your team does.",
-      description: "Product film for OnBuddy, the work management platform. (Edit this to add your role.)",
+      description: "Product film for OnBuddy, the work management platform.",
+      role: "Motion designer",
       media: ["videos/onbuddy/film.mp4"]
     },
     {
@@ -191,7 +200,8 @@ const SITE = {
       image: "videos/daisy/film.jpg",
       video: "videos/daisy/film.mp4",
       headline: "From idea to app design, faster.",
-      description: "Product film for Daisy, showing a prompt turned into a full app design. (Edit this to add your role.)",
+      description: "Product film for Daisy, showing a prompt turned into a full app design.",
+      role: "Motion designer",
       media: ["videos/daisy/film.mp4"]
     },
     {
@@ -200,7 +210,8 @@ const SITE = {
       image: "videos/ogilvy/leadership.jpg",
       video: "videos/ogilvy/leadership.mp4",
       headline: "Meet the people behind the work.",
-      description: "Leadership introduction film for the Ogilvy group in Nigeria. (Edit this to add your role.)",
+      description: "Leadership introduction film for the Ogilvy group in Nigeria.",
+      role: "Motion designer",
       media: ["videos/ogilvy/leadership.mp4"]
     }
   ],
