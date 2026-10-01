@@ -50,7 +50,7 @@ const SITE = {
     { name: "SmartCash",    logo: "images/brands/smartcash.svg" },
     { name: "Mr Chef",      logo: "" },
     { name: "The Place",    logo: "images/brands/the-place.png", originalColour: true },
-    { name: "Delana",       logo: "" }
+    { name: "Delana",       logo: "images/brands/delana.png" }
   ],
 
   // Your portrait for the About section, e.g. "images/sola.jpg"
