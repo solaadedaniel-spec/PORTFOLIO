@@ -45,7 +45,7 @@ const SITE = {
     { name: "Coca-Cola",    logo: "images/brands/coca-cola.svg" },
     { name: "Chupa Chups",  logo: "images/brands/chupa-chups.svg" },
     { name: "Hollandia",    logo: "images/brands/hollandia.svg" },
-    { name: "Golden Penny", logo: "images/brands/golden-penny.svg" },
+    { name: "Golden Penny", logo: "images/brands/golden-penny.png", originalColour: true },
     { name: "TVS",          logo: "images/brands/tvs.svg" },
     { name: "SmartCash",    logo: "images/brands/smartcash.svg" },
     { name: "Mr Chef",      logo: "images/brands/mr-chef.png", originalColour: true },
