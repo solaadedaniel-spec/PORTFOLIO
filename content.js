@@ -38,7 +38,9 @@ const SITE = {
      The strip of names under the intro.
      name: the brand name (shown as text if there is no logo)
      logo: optional. A logo file, e.g. "images/brands/coca-cola.svg".
-           Use a transparent PNG or SVG; it is shown in white automatically. */
+           Use a transparent PNG or SVG; it is shown in white automatically.
+     originalColour: true keeps the logo's own colours instead of white
+           (for logos that turn into a blank shape when made white). */
   brands: [
     { name: "Coca-Cola",    logo: "images/brands/coca-cola.svg" },
     { name: "Chupa Chups",  logo: "images/brands/chupa-chups.svg" },
@@ -47,7 +49,7 @@ const SITE = {
     { name: "TVS",          logo: "images/brands/tvs.svg" },
     { name: "SmartCash",    logo: "images/brands/smartcash.svg" },
     { name: "Mr Chef",      logo: "" },
-    { name: "The Place",    logo: "" },
+    { name: "The Place",    logo: "images/brands/the-place.png", originalColour: true },
     { name: "Delana",       logo: "" }
   ],
 

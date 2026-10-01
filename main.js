@@ -50,6 +50,7 @@
       const li = document.createElement("li");
       if (c > 0) li.setAttribute("aria-hidden", "true");
       if (b.logo) {
+        if (b.originalColour) li.classList.add("brand--colour");
         const img = document.createElement("img");
         img.src = b.logo;
         img.alt = b.name;

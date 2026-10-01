@@ -129,6 +129,8 @@ a { color: inherit; }
 .brands__track li:hover { color: var(--text); }
 .brands__track img { width: auto; height: clamp(2rem, 3.4vw, 2.75rem); filter: brightness(0) invert(1); opacity: 0.7; transition: opacity 0.3s var(--ease); }
 .brands__track li:hover img { opacity: 1; }
+/* Logos that don't work as plain white keep their own colours */
+.brands__track li.brand--colour img { filter: none; opacity: 0.9; }
 [data-theme="light"] .brands__track img { filter: brightness(0); }
 
 /* ---------- Work grid ---------- */
