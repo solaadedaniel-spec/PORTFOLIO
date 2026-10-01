@@ -27,7 +27,9 @@ const SITE = {
   tagline: "Nothing much, just real good stuff.",
 
   // The last word of the big sentence rotates through these.
-  // They are also the filter buttons above your work.
+  rotatingWords: ["Design", "Advertising", "Fashion", "Photography"],
+
+  // The filter buttons above your work.
   disciplines: ["Art direction", "Design", "Advertising", "Photography"],
 
   location: "Based in Nigeria",

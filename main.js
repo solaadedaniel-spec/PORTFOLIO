@@ -8,7 +8,7 @@
   const homeTitle = SITE.name + " | " + SITE.role;
   document.title = homeTitle;
 
-  const words = SITE.disciplines.map((d) => d.toLowerCase());
+  const words = (SITE.rotatingWords || SITE.disciplines).map((d) => d.toLowerCase());
   SITE.disciplinesText = words.slice(0, -1).join(", ") + " and " + words[words.length - 1] + ".";
 
   // Simple text fields: any element with data-text="key" gets SITE[key]
