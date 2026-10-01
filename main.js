@@ -228,10 +228,17 @@
       }
       el.className = "project__item reveal";
       if (embed) el.classList.add("project__embed");
-      // First item is full width, the rest sit in pairs. A leftover last item goes full width too.
-      if (n === 0 || (n === list.length - 1 && (list.length - 1) % 2 === 1)) el.classList.add("is-wide");
+      // The first item and YouTube/Vimeo films are full width; everything else sits in pairs.
+      if (n === 0 || embed) el.classList.add("is-wide");
       pMedia.appendChild(el);
       io.observe(el);
+    });
+    // A picture left without a partner (before a film or at the end) goes full width too.
+    let run = [];
+    [...pMedia.children, null].forEach((el) => {
+      if (el && !el.classList.contains("is-wide")) { run.push(el); return; }
+      if (run.length % 2 === 1) run[run.length - 1].classList.add("is-wide");
+      run = [];
     });
     pNext.href = "#/" + next.slug;
     pNext.textContent = next.title;
