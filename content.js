@@ -154,12 +154,12 @@ const SITE = {
       role: "Creator and art director",
       media: [
         "https://youtu.be/A4w8fdO0Ly8",
+        "https://youtu.be/vQe8UAiq6A4",
+        "https://youtu.be/JgaHpFG1LNs",
         "images/baru/matriarch.jpg",
         "images/baru/mask.jpg",
         "images/baru/warrior.jpg",
-        "images/baru/tunic.jpg",
-        "https://youtu.be/vQe8UAiq6A4",
-        "https://youtu.be/JgaHpFG1LNs"
+        "images/baru/tunic.jpg"
       ]
     },
     {
