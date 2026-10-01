@@ -192,9 +192,9 @@ const SITE = {
       image: "videos/hollandia/one-pack.jpg",
       video: "videos/hollandia/one-pack.mp4",
       headline: "1 pack, 3 servings. Made to share.",
-      description: "Animated digital banner for Hollandia Evaporated Milk.",
+      description: "Evap campaign for Hollandia Evaporated Milk: animated digital banners and a digital billboard at Jakande 5th Roundabout, Lekki.",
       role: "Motion designer",
-      media: ["videos/hollandia/one-pack.mp4"]
+      media: ["videos/hollandia/one-pack.mp4", "videos/hollandia/jakande-billboard.mp4"]
     },
     {
       title: "SmartCash",
