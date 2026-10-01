@@ -28,7 +28,7 @@ const SITE = {
 
   // The last word of the big sentence rotates through these.
   // They are also the filter buttons above your work.
-  disciplines: ["Design", "Advertising", "Fashion", "Photography"],
+  disciplines: ["Art direction", "Design", "Advertising", "Photography"],
 
   location: "Based in Nigeria",
   email: "solaadedaniel@gmail.com",
@@ -116,7 +116,7 @@ const SITE = {
     },
     {
       title: "Delana Reigns, Issue 01",
-      discipline: "Fashion",
+      discipline: "Photography",
       image: "images/delana/camp-1.jpg",
       headline: "Denim & Leather. Issue 01 for Delana Reigns.",
       description: "Campaign and lookbook for the Delana Reigns Issue 01 drop: cross-panel leather tops and wide-leg denim, shot against hard black and white walls. Plus the Cross Cheetah Print shoot and the poster for the Delana pop-up in Lekki.",
@@ -145,7 +145,7 @@ const SITE = {
     },
     {
       title: "Baru, Age of Bronze",
-      discipline: "Design",
+      discipline: "Art direction",
       image: "images/baru/matriarch.jpg",
       headline: "A world where bronze rules all.",
       description: "Baru is a conceptual world I built from scratch: its people, its armour, its rituals and its rulers, all forged in bronze.",
@@ -155,7 +155,8 @@ const SITE = {
         "images/baru/matriarch.jpg",
         "images/baru/mask.jpg",
         "images/baru/warrior.jpg",
-        "images/baru/tunic.jpg"
+        "images/baru/tunic.jpg",
+        "https://youtu.be/vQe8UAiq6A4"
       ]
     },
     {
