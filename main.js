@@ -48,6 +48,86 @@
     }, 2400);
   }
 
+  /* ---------- Intro: trail of project pictures that follows the cursor ---------- */
+  // Uses every picture already in your projects (no extra setup needed).
+  // Small copies live in images/trail/; if one is missing, the full picture is used.
+  const hero = document.querySelector(".hero");
+  const isPicture = (src) => src && /\.(jpe?g|png|webp)$/i.test(src);
+  const perProject = SITE.work.map((item) => [...new Set([item.image, ...(item.media || [])])].filter(isPicture));
+  const pool = [];
+  for (let i = 0; perProject.some((list) => list[i]); i++) {
+    perProject.forEach((list) => { if (list[i]) pool.push(list[i]); }); // mix projects together
+  }
+  const thumb = (src) => "images/trail/" + src.replace(/\.(jpe?g|png|webp)$/i, "").replace(/[\/.]/g, "-") + ".jpg";
+
+  if (hero && pool.length && !reduceMotion) {
+    const trail = document.createElement("div");
+    trail.className = "hero__trail";
+    trail.setAttribute("aria-hidden", "true");
+    hero.prepend(trail);
+
+    const GAP = 60;   // how far the cursor travels before the next picture appears (px)
+    const MAX = 18;   // pictures on screen at once
+    let next = 0, last = null, z = 1;
+
+    // Load a few pictures ahead so each one is ready when it appears
+    const preloaded = new Set();
+    const preload = (count) => {
+      for (let k = 0; k < count; k++) {
+        const src = pool[(next + k) % pool.length];
+        if (preloaded.has(src)) continue;
+        preloaded.add(src);
+        const im = new Image();
+        im.src = thumb(src);
+      }
+    };
+
+    const spawn = (x, y, dx, dy) => {
+      const src = pool[next % pool.length];
+      next++;
+      preload(5);
+      const img = document.createElement("img");
+      img.alt = "";
+      img.className = "hero__trail-img";
+      img.decoding = "async";
+      img.onerror = () => { img.onerror = null; img.src = src; };
+      img.src = thumb(src);
+      img.style.left = x + "px";
+      img.style.top = y + "px";
+      img.style.zIndex = z++;
+      trail.appendChild(img);
+      while (trail.children.length > MAX) trail.firstElementChild.remove();
+
+      // Pop in, hold, then drift on in the direction of travel while shrinking and dimming
+      const len = Math.hypot(dx, dy) || 1;
+      const ox = (dx / len) * 60, oy = (dy / len) * 60;
+      const tilt = (Math.random() - 0.5) * 8;
+      img.animate([
+        { opacity: 0, transform: `translate(-50%, -50%) scale(0.55) rotate(${tilt}deg)`, filter: "brightness(1)" },
+        { opacity: 1, transform: `translate(-50%, -50%) scale(1) rotate(${tilt}deg)`, filter: "brightness(1)", offset: 0.1 },
+        { opacity: 1, transform: `translate(-50%, -50%) scale(1) rotate(${tilt}deg)`, filter: "brightness(0.85)", offset: 0.55 },
+        { opacity: 0, transform: `translate(calc(-50% + ${ox}px), calc(-50% + ${oy}px)) scale(0.6) rotate(${tilt}deg)`, filter: "brightness(0.35)" }
+      ], { duration: 1700, easing: "cubic-bezier(0.16, 1, 0.3, 1)", fill: "forwards" })
+        .onfinish = () => img.remove();
+    };
+
+    const move = (clientX, clientY) => {
+      const r = hero.getBoundingClientRect();
+      const x = clientX - r.left, y = clientY - r.top;
+      if (!last) { last = { x, y }; preload(6); return; }
+      const dx = x - last.x, dy = y - last.y;
+      if (Math.hypot(dx, dy) < GAP) return;
+      last = { x, y };
+      spawn(x, y, dx, dy);
+    };
+
+    hero.addEventListener("pointermove", (e) => { if (e.pointerType !== "touch") move(e.clientX, e.clientY); });
+    hero.addEventListener("pointerleave", () => { last = null; });
+    // On phones, dragging a finger across the intro leaves the same trail
+    hero.addEventListener("touchmove", (e) => move(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
+    hero.addEventListener("touchend", () => { last = null; });
+  }
+
   /* ---------- Brands strip ---------- */
   // The list is drawn several times so the scrolling loop is seamless.
   const brands = document.getElementById("brands");

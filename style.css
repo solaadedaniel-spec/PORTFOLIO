@@ -93,7 +93,22 @@ a { color: inherit; }
 .nav nav .nav__linkedin { color: var(--accent); padding-right: 0; }
 
 /* ---------- Intro ---------- */
-.hero { padding-top: clamp(1.5rem, 5vw, 3.5rem); }
+.hero { position: relative; z-index: 2; padding-top: clamp(1.5rem, 5vw, 3.5rem); }
+/* Bigger stage on screens with a mouse, so there is room for the picture trail */
+@media (hover: hover) and (min-width: 768px) {
+  .hero {
+    min-height: clamp(30rem, calc(100svh - 12rem), 46rem);
+    display: flex; flex-direction: column; justify-content: center;
+    padding-block: clamp(2rem, 5vw, 4rem);
+  }
+}
+/* Pictures that follow the cursor. They sit above the text but never block clicks or text selection. */
+.hero__trail { position: absolute; inset: 0; z-index: 2; pointer-events: none; overflow-x: clip; }
+.hero__trail-img {
+  position: absolute; width: clamp(110px, 13vw, 210px); height: auto; max-height: 280px;
+  object-fit: cover; border-radius: calc(var(--radius) * 0.6);
+  box-shadow: var(--shadow); opacity: 0; will-change: transform, opacity;
+}
 .eyebrow {
   margin: 0 0 1rem;
   font-size: 0.8rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase;
