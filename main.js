@@ -51,7 +51,7 @@
   /* ---------- Intro: trail of project pictures that follows the cursor ---------- */
   // Uses every picture already in your projects (no extra setup needed).
   // Small copies live in images/trail/; if one is missing, the full picture is used.
-  const hero = document.querySelector(".hero");
+  const stage = document.getElementById("hero-stage");
   const isPicture = (src) => src && /\.(jpe?g|png|webp)$/i.test(src);
   const perProject = SITE.work.map((item) => [...new Set([item.image, ...(item.media || [])])].filter(isPicture));
   const pool = [];
@@ -60,15 +60,18 @@
   }
   const thumb = (src) => "images/trail/" + src.replace(/\.(jpe?g|png|webp)$/i, "").replace(/[\/.]/g, "-") + ".jpg";
 
-  if (hero && pool.length && !reduceMotion) {
+  if (stage && pool.length && !reduceMotion) {
     const trail = document.createElement("div");
     trail.className = "hero__trail";
     trail.setAttribute("aria-hidden", "true");
-    hero.prepend(trail);
+    stage.prepend(trail);
 
-    const GAP = 60;   // how far the cursor travels before the next picture appears (px)
-    const MAX = 18;   // pictures on screen at once
-    let next = 0, last = null, z = 1;
+    const GAP = 42;      // distance between pictures along the path (px)
+    const MAX = 22;      // pictures on screen at once
+    const FOLLOW = 0.2;  // how quickly the trail catches up with the cursor (0 to 1)
+    const LIFE = 1700;   // how long each picture lives (ms)
+    let next = 0, z = 1, travelled = 0, running = false;
+    let target = null, pos = null, lastSpawn = null;
 
     // Load a few pictures ahead so each one is ready when it appears
     const preloaded = new Set();
@@ -77,55 +80,74 @@
         const src = pool[(next + k) % pool.length];
         if (preloaded.has(src)) continue;
         preloaded.add(src);
-        const im = new Image();
-        im.src = thumb(src);
+        new Image().src = thumb(src);
       }
     };
 
-    const spawn = (x, y, dx, dy) => {
+    const spawn = (x, y, vx, vy) => {
       const src = pool[next % pool.length];
       next++;
-      preload(5);
+      preload(6);
+      const speed = Math.hypot(vx, vy);
+      const angle = Math.atan2(vy, vx) * 180 / Math.PI;
+      const blur = Math.min(14, speed * 0.6);        // faster movement, stronger blur
+      const stretch = 1 + Math.min(0.45, speed * 0.018);
+      const tilt = (Math.random() - 0.5) * 6;
+      const back = Math.min(90, speed * 3.2);        // glides in from behind along the path
+      const bx = speed ? (vx / speed) * back : 0, by = speed ? (vy / speed) * back : 0;
+
+      // The outer box turns to face the direction of travel, so the blur and stretch run along the motion;
+      // the picture inside turns back so it still looks straight.
+      const item = document.createElement("div");
+      item.className = "hero__trail-item";
+      item.style.zIndex = z++;
       const img = document.createElement("img");
       img.alt = "";
-      img.className = "hero__trail-img";
       img.decoding = "async";
       img.onerror = () => { img.onerror = null; img.src = src; };
       img.src = thumb(src);
-      img.style.left = x + "px";
-      img.style.top = y + "px";
-      img.style.zIndex = z++;
-      trail.appendChild(img);
+      img.style.transform = `rotate(${-angle + tilt}deg)`;
+      item.appendChild(img);
+      trail.appendChild(item);
       while (trail.children.length > MAX) trail.firstElementChild.remove();
 
-      // Pop in, hold, then drift on in the direction of travel while shrinking and dimming
-      const len = Math.hypot(dx, dy) || 1;
-      const ox = (dx / len) * 60, oy = (dy / len) * 60;
-      const tilt = (Math.random() - 0.5) * 8;
-      img.animate([
-        { opacity: 0, transform: `translate(-50%, -50%) scale(0.55) rotate(${tilt}deg)`, filter: "brightness(1)" },
-        { opacity: 1, transform: `translate(-50%, -50%) scale(1) rotate(${tilt}deg)`, filter: "brightness(1)", offset: 0.1 },
-        { opacity: 1, transform: `translate(-50%, -50%) scale(1) rotate(${tilt}deg)`, filter: "brightness(0.85)", offset: 0.55 },
-        { opacity: 0, transform: `translate(calc(-50% + ${ox}px), calc(-50% + ${oy}px)) scale(0.6) rotate(${tilt}deg)`, filter: "brightness(0.35)" }
-      ], { duration: 1700, easing: "cubic-bezier(0.16, 1, 0.3, 1)", fill: "forwards" })
-        .onfinish = () => img.remove();
+      const at = (dx, dy, extra) => `translate(${x + dx}px, ${y + dy}px) translate(-50%, -50%) rotate(${angle}deg) ${extra}`;
+      item.animate([
+        { opacity: 0, transform: at(-bx, -by, `scale(${stretch}, 0.92)`), filter: `blur(${blur}px) brightness(1)` },
+        { opacity: 1, transform: at(0, 0, "scale(1, 1)"), filter: "blur(0px) brightness(1)", offset: 0.16 },
+        { opacity: 1, transform: at(bx * 0.15, by * 0.15, "scale(1, 1)"), filter: "blur(0px) brightness(0.85)", offset: 0.55 },
+        { opacity: 0, transform: at(bx * 0.7, by * 0.7, "scale(0.62, 0.62)"), filter: "blur(3px) brightness(0.35)" }
+      ], { duration: LIFE, easing: "cubic-bezier(0.22, 1, 0.36, 1)", fill: "forwards" }).onfinish = () => item.remove();
+    };
+
+    // Smoothly chase the cursor every frame, dropping a picture each time the path grows by GAP
+    const tick = () => {
+      if (!target || !pos) { running = false; return; }
+      const vx = (target.x - pos.x) * FOLLOW, vy = (target.y - pos.y) * FOLLOW;
+      pos.x += vx; pos.y += vy;
+      travelled += Math.hypot(vx, vy);
+      if (travelled >= GAP) {
+        travelled = 0;
+        spawn(pos.x, pos.y, pos.x - lastSpawn.x, pos.y - lastSpawn.y);
+        lastSpawn = { x: pos.x, y: pos.y };
+      }
+      if (Math.hypot(target.x - pos.x, target.y - pos.y) > 0.5) requestAnimationFrame(tick);
+      else running = false;
     };
 
     const move = (clientX, clientY) => {
-      const r = hero.getBoundingClientRect();
-      const x = clientX - r.left, y = clientY - r.top;
-      if (!last) { last = { x, y }; preload(6); return; }
-      const dx = x - last.x, dy = y - last.y;
-      if (Math.hypot(dx, dy) < GAP) return;
-      last = { x, y };
-      spawn(x, y, dx, dy);
+      const r = stage.getBoundingClientRect();
+      target = { x: clientX - r.left, y: clientY - r.top };
+      if (!pos) { pos = { ...target }; lastSpawn = { ...target }; preload(8); return; }
+      if (!running) { running = true; requestAnimationFrame(tick); }
     };
+    const reset = () => { pos = null; target = null; travelled = 0; };
 
-    hero.addEventListener("pointermove", (e) => { if (e.pointerType !== "touch") move(e.clientX, e.clientY); });
-    hero.addEventListener("pointerleave", () => { last = null; });
+    stage.addEventListener("pointermove", (e) => { if (e.pointerType !== "touch") move(e.clientX, e.clientY); });
+    stage.addEventListener("pointerleave", (e) => { if (e.pointerType !== "touch") reset(); });
     // On phones, dragging a finger across the intro leaves the same trail
-    hero.addEventListener("touchmove", (e) => move(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
-    hero.addEventListener("touchend", () => { last = null; });
+    stage.addEventListener("touchmove", (e) => move(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
+    stage.addEventListener("touchend", reset);
   }
 
   /* ---------- Brands strip ---------- */
