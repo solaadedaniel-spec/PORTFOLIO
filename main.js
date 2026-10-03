@@ -208,8 +208,17 @@
       img.src = item.image;
       img.alt = "";
       img.loading = i < 4 ? "eager" : "lazy";
-      // YouTube covers: if the large thumbnail doesn't exist, use the standard one
-      img.onerror = () => { if (img.src.includes("maxresdefault")) img.src = img.src.replace("maxresdefault", "hqdefault"); };
+      // YouTube covers: not every video has every size. YouTube answers a missing size with a
+      // tiny grey placeholder, so step down through the sizes until a real picture loads.
+      if (/i\.ytimg\.com/.test(item.image)) {
+        const sizes = ["maxresdefault", "hq720", "sddefault", "mqdefault"];
+        const nextSize = () => {
+          const k = sizes.findIndex((n) => img.src.includes(n));
+          if (k > -1 && k < sizes.length - 1) img.src = img.src.replace(sizes[k], sizes[k + 1]);
+        };
+        img.onerror = nextSize;
+        img.onload = () => { if (img.naturalWidth <= 120) nextSize(); };
+      }
       tile.appendChild(img);
 
       if (item.video && !reduceMotion) {
