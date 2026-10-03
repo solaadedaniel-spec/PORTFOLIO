@@ -130,6 +130,8 @@ const SITE = {
       headline: "Denim & Leather. Issue 01 for Delana Reigns.",
       description: "Campaign and lookbook for the Delana Reigns Issue 01 drop: cross-panel leather polos and wide-leg denim, shot against hard black and white walls. Plus the poster for the Delana pop-up in Lekki.",
       role: "Photographer and editor (campaign), art director (pop-up poster)",
+      objective: "Show the clothing naturally: simple and raw, worn rather than displayed, with the focus on details and texture instead of clean product shots.",
+      direction: "Hard light against raw black and red-taped walls, then bright daylight on rough white plaster and concrete. Tight crops pull the eye to the stitching, the croc-embossed leather and the weight of the denim, while loose, everyday poses keep the pieces feeling lived-in.",
       media: [
         "images/delana/sep.jpg",
         "images/delana/camp1.jpg",
@@ -156,6 +158,8 @@ const SITE = {
       headline: "Cross Cheetah. Out in the wild.",
       description: "Campaign for the Delana Cross Cheetah Print piece, made in house by the Delana team and shot outdoors in tall grass.",
       role: "Photographer and editor",
+      objective: "Show the clothing naturally: simple and raw, worn rather than displayed, with the focus on details and texture instead of clean product shots.",
+      direction: "Taken out of the studio and into tall grass under full midday sun. No set, no styling props, just natural light, skin and greenery, so the cheetah print and the texture of the fabric speak for themselves.",
       media: [
         "images/delana/cheetah-standing.jpg",
         "images/delana/cheetah-crouch.jpg"
