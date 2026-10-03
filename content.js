@@ -184,21 +184,21 @@ const SITE = {
       ]
     },
     {
-      title: "AI Short Film 01",
+      title: "Don’t Hang Up",
       discipline: "AI",
       image: "https://i.ytimg.com/vi/n7QcQwitiE0/maxresdefault.jpg",
-      headline: "AI Short Film 01",
-      description: "A short film made with AI tools: written, directed and edited by me, with every shot generated and cut together into a finished story.",
-      role: "Director and editor",
+      headline: "Don’t Hang Up.",
+      description: "A 30-second short film made with AI, directed by me.",
+      role: "Director",
       media: ["https://youtu.be/n7QcQwitiE0"]
     },
     {
-      title: "AI Short Film 02",
+      title: "To Love Is To Die",
       discipline: "AI",
       image: "https://i.ytimg.com/vi/HUwlKbKBORs/maxresdefault.jpg",
-      headline: "AI Short Film 02",
-      description: "A short film made with AI tools: written, directed and edited by me, with every shot generated and cut together into a finished story.",
-      role: "Director and editor",
+      headline: "To Love Is To Die.",
+      description: "A 45-second short film made with AI. Written by Kay Ugwuzor, directed by me.",
+      role: "Director",
       media: ["https://youtu.be/HUwlKbKBORs"]
     },
     {
@@ -220,7 +220,7 @@ const SITE = {
     },
     {
       title: "Golden Penny Food Fest 2026 (Proposal)",
-      discipline: "Design",
+      discipline: "Art direction",
       image: "images/golden-penny/foodfest-poster.jpg",
       headline: "A louder, hungrier look for Food Fest.",
       description: "Proposed work: a new masthead and visual identity pitched for Golden Penny Food Fest 2026 in Victoria Island, Lagos, shown across posters, web banners, the event gazebo, parasols and wristbands.",
