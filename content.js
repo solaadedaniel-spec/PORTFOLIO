@@ -30,7 +30,7 @@ const SITE = {
   rotatingWords: ["Design", "Advertising", "Fashion", "Photography"],
 
   // The filter buttons above your work.
-  disciplines: ["Art direction", "Design", "Advertising", "Photography"],
+  disciplines: ["Art direction", "AI", "Design", "Advertising", "Photography"],
 
   location: "Based in Nigeria",
   email: "solaadedaniel@gmail.com",
@@ -72,7 +72,8 @@ const SITE = {
      Each project is a tile in the grid. Clicking it opens its own page.
 
        title:       short project name (shown when you hover the tile)
-       discipline:  must match one of the disciplines above (for the filters)
+       discipline:  must match one of the disciplines above (for the filters).
+                    For more than one, use a list: ["Art direction", "AI"]
        image:       the cover picture, e.g. "images/delana/cover.jpg"
        video:       optional. A video that plays silently on the tile when
                     hovered, e.g. "videos/chupa-chups.mp4"
@@ -167,7 +168,7 @@ const SITE = {
     },
     {
       title: "Baru, Age of Bronze",
-      discipline: "Art direction",
+      discipline: ["Art direction", "AI"],
       image: "images/baru/matriarch.jpg",
       headline: "A world where bronze rules all.",
       description: "Baru is a conceptual world I built from scratch: its people, its armour, its rituals and its rulers, all forged in bronze.",
@@ -183,16 +184,22 @@ const SITE = {
       ]
     },
     {
-      title: "AI Short Films",
-      discipline: "Art direction",
+      title: "AI Short Film 01",
+      discipline: "AI",
       image: "https://i.ytimg.com/vi/n7QcQwitiE0/maxresdefault.jpg",
-      headline: "Short films, directed with AI.",
-      description: "Two short films made with AI tools: written, directed and edited by me, with every shot generated and cut together into a finished story.",
+      headline: "AI Short Film 01",
+      description: "A short film made with AI tools: written, directed and edited by me, with every shot generated and cut together into a finished story.",
       role: "Director and editor",
-      media: [
-        "https://youtu.be/n7QcQwitiE0",
-        "https://youtu.be/HUwlKbKBORs"
-      ]
+      media: ["https://youtu.be/n7QcQwitiE0"]
+    },
+    {
+      title: "AI Short Film 02",
+      discipline: "AI",
+      image: "https://i.ytimg.com/vi/HUwlKbKBORs/maxresdefault.jpg",
+      headline: "AI Short Film 02",
+      description: "A short film made with AI tools: written, directed and edited by me, with every shot generated and cut together into a finished story.",
+      role: "Director and editor",
+      media: ["https://youtu.be/HUwlKbKBORs"]
     },
     {
       title: "9–5",

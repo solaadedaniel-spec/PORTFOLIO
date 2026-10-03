@@ -177,8 +177,10 @@
   const grid = document.getElementById("work-grid");
   const filters = document.getElementById("filters");
 
+  // A project can sit in one category ("Design") or several (["Art direction", "AI"])
+  const cats = (item) => [].concat(item.discipline || []);
   // Only show filters for disciplines that have at least one project
-  const used = SITE.disciplines.filter((d) => SITE.work.some((item) => item.discipline === d));
+  const used = SITE.disciplines.filter((d) => SITE.work.some((item) => cats(item).includes(d)));
   if (used.length < 2) filters.hidden = true;
   ["All"].concat(used).forEach((label, i) => {
     const b = document.createElement("button");
@@ -194,7 +196,7 @@
   });
 
   function renderWork(filter) {
-    const visible = filter === "All" ? SITE.work : SITE.work.filter((item) => item.discipline === filter);
+    const visible = filter === "All" ? SITE.work : SITE.work.filter((item) => cats(item).includes(filter));
     grid.innerHTML = "";
     visible.forEach((item, i) => {
       const tile = document.createElement("a");
@@ -227,7 +229,7 @@
       const t = document.createElement("strong");
       t.textContent = item.title;
       const d = document.createElement("span");
-      d.textContent = item.discipline || "";
+      d.textContent = cats(item).join(", ");
       label.append(t, d);
       tile.appendChild(label);
       grid.appendChild(tile);
@@ -299,7 +301,7 @@
   function showProject(item) {
     const i = SITE.work.indexOf(item);
     const next = SITE.work[(i + 1) % SITE.work.length];
-    pMeta.textContent = item.title + (item.discipline ? ", " + item.discipline : "");
+    pMeta.textContent = [item.title, ...cats(item)].join(", ");
     pHeadline.textContent = item.headline || item.title;
     pDesc.textContent = item.description || "";
     pDesc.hidden = !item.description;
