@@ -183,6 +183,24 @@ const SITE = {
       ]
     },
     {
+      title: "Golden Penny Food Fest 2026",
+      discipline: "Design",
+      image: "images/golden-penny/foodfest-poster.jpg",
+      headline: "A louder, hungrier look for Food Fest.",
+      description: "A new masthead and visual identity for Golden Penny Food Fest 2026 in Victoria Island, Lagos, rolled out across posters, web banners, the event gazebo, parasols and wristbands.",
+      role: "Art director",
+      objective: "Create a new expressive masthead and visual direction for the upcoming Food Fest.",
+      direction: "Using colour as the basis to excite the audience and build anticipation for the day.",
+      media: [
+        "images/golden-penny/foodfest-masthead.jpg",
+        "images/golden-penny/foodfest-poster.jpg",
+        "images/golden-penny/foodfest-gazebo.jpg",
+        "images/golden-penny/foodfest-banner.jpg",
+        "images/golden-penny/foodfest-wristband.jpg",
+        "images/golden-penny/foodfest-parasol.jpg"
+      ]
+    },
+    {
       title: "The North Brick",
       discipline: "Advertising",
       image: "images/north-brick/puffer.jpg",
@@ -213,6 +231,39 @@ const SITE = {
         "videos/the-place/pepper-chicken.mp4",
         "videos/the-place/pepperlicious.mp4",
         "videos/the-place/month-meal.mp4"
+      ]
+    },
+    {
+      title: "Golden Penny Semovita",
+      discipline: "Advertising",
+      image: "videos/golden-penny/semovita.jpg",
+      video: "videos/golden-penny/semovita.mp4",
+      headline: "One product. Many possibilities.",
+      description: "Motion piece for Golden Penny Semovita, setting one pack against a spread of everyday meals.",
+      role: "Art director and motion designer",
+      objective: "Reinforce Golden Penny Semo as a flexible staple suitable across multiple meals and households.",
+      insight: "Versatility increases everyday relevance and long-term brand recall.",
+      direction: "Visual storytelling showcased multiple serving possibilities while keeping strong product dominance and appetite appeal.",
+      concept: "One product. Many possibilities: a dependable foundation across diverse cultural contexts.",
+      media: ["videos/golden-penny/semovita.mp4"]
+    },
+    {
+      title: "Golden Penny",
+      discipline: "Advertising",
+      image: "images/golden-penny/eid-fasts-to-feasts.jpg",
+      video: "videos/golden-penny/pasta-squeezeback.mp4",
+      headline: "Everyday staples, made worth sharing.",
+      description: "Brand communication across the Golden Penny range: Eid el-Fitr posts, broadcast squeezebacks for Golden Penny pasta and food-cart branding for Amaizing Day Cereal.",
+      role: "Art director and motion designer",
+      objective: "Build strong visual consistency across executions while adapting the message to each product category and campaign.",
+      direction: "Working within established brand guidelines, elevating product storytelling through culturally relevant messaging, real pain points and appetite appeal, balancing commercial clarity with visual engagement.",
+      media: [
+        "images/golden-penny/eid-fasts-to-feasts.jpg",
+        "videos/golden-penny/pasta-squeezeback.mp4",
+        "videos/golden-penny/pasta-squeezeback-short.mp4",
+        "images/golden-penny/eid-reason-to-share.jpg",
+        "images/golden-penny/foodcart-front.jpg",
+        "images/golden-penny/foodcart-side.jpg"
       ]
     },
     {
