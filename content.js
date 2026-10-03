@@ -200,12 +200,12 @@ const SITE = {
       ]
     },
     {
-      title: "Golden Penny Food Fest 2026",
+      title: "Golden Penny Food Fest 2026 (Proposal)",
       discipline: "Design",
       image: "images/golden-penny/foodfest-poster.jpg",
       headline: "A louder, hungrier look for Food Fest.",
-      description: "A new masthead and visual identity for Golden Penny Food Fest 2026 in Victoria Island, Lagos, rolled out across posters, web banners, the event gazebo, parasols and wristbands.",
-      role: "Art director",
+      description: "Proposed work: a new masthead and visual identity pitched for Golden Penny Food Fest 2026 in Victoria Island, Lagos, shown across posters, web banners, the event gazebo, parasols and wristbands.",
+      role: "Art director (proposal)",
       objective: "Create a new expressive masthead and visual direction for the upcoming Food Fest.",
       direction: "Using colour as the basis to excite the audience and build anticipation for the day.",
       media: [
