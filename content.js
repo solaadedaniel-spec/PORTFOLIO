@@ -183,6 +183,18 @@ const SITE = {
       ]
     },
     {
+      title: "AI Short Films",
+      discipline: "Art direction",
+      image: "https://i.ytimg.com/vi/n7QcQwitiE0/maxresdefault.jpg",
+      headline: "Short films, directed with AI.",
+      description: "Two short films made with AI tools: written, directed and edited by me, with every shot generated and cut together into a finished story.",
+      role: "Director and editor",
+      media: [
+        "https://youtu.be/n7QcQwitiE0",
+        "https://youtu.be/HUwlKbKBORs"
+      ]
+    },
+    {
       title: "9–5",
       discipline: "Photography",
       image: "images/9-5/9-5-01.jpg",

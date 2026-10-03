@@ -52,7 +52,7 @@
   // Uses every picture already in your projects (no extra setup needed).
   // Small copies live in images/trail/; if one is missing, the full picture is used.
   const stage = document.getElementById("hero-stage");
-  const isPicture = (src) => src && /\.(jpe?g|png|webp)$/i.test(src);
+  const isPicture = (src) => src && !/^https?:/.test(src) && /\.(jpe?g|png|webp)$/i.test(src);
   const perProject = SITE.work.map((item) => [...new Set([item.image, ...(item.media || [])])].filter(isPicture));
   const pool = [];
   for (let i = 0; perProject.some((list) => list[i]); i++) {
@@ -206,6 +206,8 @@
       img.src = item.image;
       img.alt = "";
       img.loading = i < 4 ? "eager" : "lazy";
+      // YouTube covers: if the large thumbnail doesn't exist, use the standard one
+      img.onerror = () => { if (img.src.includes("maxresdefault")) img.src = img.src.replace("maxresdefault", "hqdefault"); };
       tile.appendChild(img);
 
       if (item.video && !reduceMotion) {
