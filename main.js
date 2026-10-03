@@ -289,6 +289,8 @@
   const pHeadline = document.getElementById("project-headline");
   const pDesc = document.getElementById("project-desc");
   const pRole = document.getElementById("project-role");
+  const pBrief = document.getElementById("project-brief");
+  const BRIEF = [["objective", "Objective"], ["insight", "Insight"], ["direction", "Creative direction"], ["concept", "Concept"]];
   const pMedia = document.getElementById("project-media");
   const pNext = document.getElementById("project-next");
 
@@ -301,6 +303,19 @@
     pDesc.hidden = !item.description;
     pRole.textContent = item.role ? "Role: " + item.role : "";
     pRole.hidden = !item.role;
+    // Objective / insight / creative direction / concept, for projects that have them
+    pBrief.innerHTML = "";
+    BRIEF.forEach(([key, label]) => {
+      if (!item[key]) return;
+      const box = document.createElement("div");
+      const dt = document.createElement("dt");
+      const dd = document.createElement("dd");
+      dt.textContent = label;
+      dd.textContent = item[key];
+      box.append(dt, dd);
+      pBrief.appendChild(box);
+    });
+    pBrief.hidden = !pBrief.children.length;
     pMedia.innerHTML = "";
     const list = item.media && item.media.length ? item.media : [item.video || item.image];
     list.forEach((src, n) => {

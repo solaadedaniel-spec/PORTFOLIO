@@ -261,6 +261,17 @@ a { color: inherit; }
 }
 .project__desc { margin: 1.5rem 0 0; max-width: 58ch; color: var(--muted); font-size: 1.125rem; }
 .project__role { margin: 1rem 0 0; font-weight: 500; color: var(--text); }
+/* Objective / insight / creative direction / concept */
+.project__brief {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.25rem clamp(1.25rem, 3vw, 2.5rem);
+  margin: 2rem 0 0; padding-top: 1.5rem; border-top: 1px solid var(--line);
+}
+.project__brief dt {
+  margin-bottom: 0.4rem; font-size: 0.75rem; font-weight: 500;
+  letter-spacing: 0.14em; text-transform: uppercase; color: var(--accent);
+}
+.project__brief dd { margin: 0; color: var(--text); line-height: 1.5; }
 .project__media {
   display: grid; gap: clamp(0.75rem, 1.8vw, 1.25rem);
   max-width: 1280px; margin: clamp(2.5rem, 6vw, 4rem) auto 0; padding-inline: var(--gutter);
@@ -316,10 +327,12 @@ video.project__item { width: auto; max-width: 100%; max-height: 85vh; margin-inl
   .project:not([hidden]) .project__meta,
   .project:not([hidden]) .project__headline,
   .project:not([hidden]) .project__desc,
-  .project:not([hidden]) .project__role { animation: rise 0.8s var(--ease) both; }
+  .project:not([hidden]) .project__role,
+  .project:not([hidden]) .project__brief { animation: rise 0.8s var(--ease) both; }
   .project:not([hidden]) .project__headline { animation-delay: 0.05s; }
   .project:not([hidden]) .project__desc { animation-delay: 0.1s; }
   .project:not([hidden]) .project__role { animation-delay: 0.14s; }
+  .project:not([hidden]) .project__brief { animation-delay: 0.2s; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

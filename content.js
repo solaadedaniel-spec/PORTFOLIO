@@ -79,6 +79,10 @@ const SITE = {
        headline:    the big sentence at the top of the project page
        description: a short paragraph about the project (who it was for, what it was)
        role:        what you did, e.g. "Art director", "Motion designer"
+       objective, insight, direction, concept:
+                    optional. Short lines shown on the project page under
+                    "Objective", "Insight", "Creative direction" and "Concept".
+                    Leave any of them out and that heading simply won’t show.
        media:       the pictures and videos shown on the project page, in order.
                     Any file ending in .mp4 is shown as a video with sound.
                     You can also paste a YouTube or Vimeo link here, e.g.
@@ -95,6 +99,9 @@ const SITE = {
       headline: "Every G has a nickname. What’s yours?",
       description: "Social content for Share a Coke in Nigeria, built around the nickname bottles: My G, Sabi girl, G.O.A.T, Idan. Posts for cultural moments like International Men’s Day and World Kindness Day, plus rooftop, beach and bestie moments.",
       role: "Motion designer",
+      objective: "Create digital motion assets to run throughout the campaign.",
+      insight: "Ummm… Share a Coke is BACKKKK.",
+      direction: "A Gen Z focused design style.",
       media: [
         "videos/coca-cola/kindness-day.mp4",
         "videos/coca-cola/mens-day.mp4",
@@ -169,6 +176,7 @@ const SITE = {
       headline: "What if LEGO and The North Face made a collection together?",
       description: "A spec ad imagining The North Brick: one logo built from both brands, carried across a puffer, a range of backpacks and a buildable mountain set.",
       role: "Art director",
+      concept: "Combining two global brands that have nothing to do with each other into one cohesive brand, then expanding it.",
       media: [
         "images/north-brick/cover.jpg",
         "images/north-brick/logo.jpg",
@@ -212,6 +220,10 @@ const SITE = {
       headline: "Funding your wallet, in four simple steps.",
       description: "How-to explainer for SmartCash showing customers how to fund their wallet from any banking app.",
       role: "Motion designer",
+      objective: "Position SmartCash as a relatable, trustworthy financial companion, especially during high-spend festive periods.",
+      insight: "Financial brands often feel distant; familiarity builds trust.",
+      direction: "Human-centred visuals, a softened brand tone and warm festive cues reinforced approachability.",
+      concept: "Finance without intimidation: a friendly neighbour simplifying everyday transactions.",
       media: ["videos/smartcash/how-to.mp4"]
     },
     {
@@ -222,6 +234,7 @@ const SITE = {
       headline: "One workspace for everything your team does.",
       description: "Product film for OnBuddy, the work management platform.",
       role: "Motion designer",
+      objective: "Entertain and educate the audience on the features of each product, seamlessly.",
       media: ["videos/onbuddy/film.mp4"]
     },
     {
@@ -232,6 +245,7 @@ const SITE = {
       headline: "From idea to app design, faster.",
       description: "Product film for Daisy, showing a prompt turned into a full app design.",
       role: "Motion designer",
+      objective: "Entertain and educate the audience on the features of each product, seamlessly.",
       media: ["videos/daisy/film.mp4"]
     },
     {
