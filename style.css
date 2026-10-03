@@ -279,6 +279,8 @@ a { color: inherit; }
 .project__item { border-radius: var(--radius); background: var(--surface); }
 /* Videos keep their own shape (tall phone videos don't fill the whole screen) */
 video.project__item { width: auto; max-width: 100%; max-height: 85vh; margin-inline: auto; background: #000; }
+/* Tall pictures shown full width (posters, portraits) never grow taller than the screen */
+img.project__item.is-wide { width: auto; max-width: 100%; max-height: 90vh; margin-inline: auto; }
 /* YouTube / Vimeo films */
 .project__embed { aspect-ratio: 16 / 9; overflow: hidden; background: #000; }
 .project__embed iframe { display: block; width: 100%; height: 100%; border: 0; }

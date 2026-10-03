@@ -126,18 +126,16 @@ const SITE = {
     {
       title: "Delana Reigns, Issue 01",
       discipline: "Photography",
-      image: "images/delana/camp-1.jpg",
+      image: "images/delana/camp1.jpg",
       headline: "Denim & Leather. Issue 01 for Delana Reigns.",
-      description: "Campaign and lookbook for the Delana Reigns Issue 01 drop: cross-panel leather tops and wide-leg denim, shot against hard black and white walls. Plus the Cross Cheetah Print shoot and the poster for the Delana pop-up in Lekki.",
+      description: "Campaign and lookbook for the Delana Reigns Issue 01 drop: cross-panel leather polos and wide-leg denim, shot against hard black and white walls. Plus the poster for the Delana pop-up in Lekki.",
       role: "Photographer and editor (campaign), art director (pop-up poster)",
       media: [
         "images/delana/sep.jpg",
-        "images/delana/camp-1.jpg",
         "images/delana/camp1.jpg",
         "images/delana/camp-2.jpg",
         "images/delana/black-look.jpg",
         "images/delana/flat-lay.jpg",
-        "images/delana/cross-shoot-july-1cross-shoot-july-2-2.jpg",
         "images/delana/red-top-ffront-web.jpg",
         "images/delana/red-top-backweb.jpg",
         "images/delana/red-bottom-front-web.jpg",
@@ -146,10 +144,21 @@ const SITE = {
         "images/delana/white-top-front-web.jpg",
         "images/delana/white-top-web.jpg",
         "images/delana/white-bottom-web.jpg",
+        "images/delana/cross-shoot-july-1cross-shoot-july-2-2.jpg",
         "images/delana/cross-shoot-july-1cross-shoot-july-2-3.jpg",
-        "images/delana/cheetah-standing.jpg",
-        "images/delana/cheetah-crouch.jpg",
         "images/delana/pop-up-poster.jpg"
+      ]
+    },
+    {
+      title: "Delana Cross Cheetah, 2025",
+      discipline: "Photography",
+      image: "images/delana/cheetah-standing.jpg",
+      headline: "Cross Cheetah. Out in the wild.",
+      description: "Campaign for the Delana Cross Cheetah Print piece, made in house by the Delana team and shot outdoors in tall grass.",
+      role: "Photographer and editor",
+      media: [
+        "images/delana/cheetah-standing.jpg",
+        "images/delana/cheetah-crouch.jpg"
       ]
     },
     {
