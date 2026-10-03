@@ -183,6 +183,23 @@ const SITE = {
       ]
     },
     {
+      title: "9–5",
+      discipline: "Photography",
+      image: "images/9-5/9-5-01.jpg",
+      headline: "Humankind cannot gain anything without first giving something in return.",
+      description: "A personal photo series on the everyday hustler at work in Lagos: hawkers weaving through traffic, passengers packed into the back of a bus, riders and roadside workers keeping the city moving.",
+      role: "Photographer and editor (personal project)",
+      direction: "Shot on the move from inside traffic, through windscreens and side mirrors. Grain, warm faded colour and split-frame collages lay two moments side by side, so each frame feels like the pace of a commute.",
+      media: [
+        "images/9-5/9-5-01.jpg",
+        "images/9-5/9-5-02.jpg",
+        "images/9-5/9-5-03.jpg",
+        "images/9-5/9-5-04.jpg",
+        "images/9-5/9-5-05.jpg",
+        "images/9-5/9-5-06.jpg"
+      ]
+    },
+    {
       title: "Golden Penny Food Fest 2026",
       discipline: "Design",
       image: "images/golden-penny/foodfest-poster.jpg",
@@ -272,9 +289,9 @@ const SITE = {
       image: "videos/hollandia/one-pack.jpg",
       video: "videos/hollandia/one-pack.mp4",
       headline: "1 pack, 3 servings. Made to share.",
-      description: "Evap campaign for Hollandia Evaporated Milk: animated digital banners and a digital billboard at Jakande 5th Roundabout, Lekki.",
+      description: "Evap campaign for Hollandia Evaporated Milk: animated digital banners and digital billboards across Lagos, at Jakande 5th Roundabout in Lekki and at Allen Roundabout, FTF Toyin, Agidingbi and Aromire Avenue in Ikeja.",
       role: "Motion designer",
-      media: ["videos/hollandia/one-pack.mp4", "videos/hollandia/jakande-billboard.mp4"]
+      media: ["videos/hollandia/one-pack.mp4", "videos/hollandia/allen-billboard.mp4", "videos/hollandia/jakande-billboard.mp4"]
     },
     {
       title: "SmartCash",
