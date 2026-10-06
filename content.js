@@ -94,7 +94,7 @@ const SITE = {
   work: [
     {
       title: "Coca-Cola, Share a Coke",
-      discipline: "Advertising",
+      discipline: ["Advertising", "Art direction"],
       image: "videos/coca-cola/kindness-day.jpg",
       video: "videos/coca-cola/kindness-day.mp4",
       headline: "Every G has a nickname. What’s yours?",
@@ -116,7 +116,7 @@ const SITE = {
     },
     {
       title: "Chupa Chups Jellies",
-      discipline: "Advertising",
+      discipline: ["Advertising", "Art direction"],
       image: "videos/chupa-chups/jellies-tvc.jpg",
       video: "videos/chupa-chups/jellies-tvc.mp4",
       headline: "Forever fun, now in jellies.",
@@ -252,7 +252,7 @@ const SITE = {
     },
     {
       title: "The North Brick",
-      discipline: "Advertising",
+      discipline: ["Advertising", "Art direction"],
       image: "images/north-brick/puffer.jpg",
       headline: "What if LEGO and The North Face made a collection together?",
       description: "A spec ad imagining The North Brick: one logo built from both brands, carried across a puffer, a range of backpacks and a buildable mountain set.",
@@ -270,7 +270,7 @@ const SITE = {
     },
     {
       title: "The Place",
-      discipline: "Advertising",
+      discipline: ["Advertising", "Art direction"],
       image: "images/the-place/spida.jpg",
       video: "videos/the-place/pepper-chicken.mp4",
       headline: "With great cravings, comes great responsibility.",
@@ -288,7 +288,7 @@ const SITE = {
     },
     {
       title: "Golden Penny Semovita",
-      discipline: "Advertising",
+      discipline: ["Advertising", "Art direction"],
       image: "videos/golden-penny/semovita.jpg",
       video: "videos/golden-penny/semovita.mp4",
       headline: "One product. Many possibilities.",
@@ -302,7 +302,7 @@ const SITE = {
     },
     {
       title: "Golden Penny",
-      discipline: "Advertising",
+      discipline: ["Advertising", "Art direction"],
       image: "images/golden-penny/eid-fasts-to-feasts.jpg",
       video: "videos/golden-penny/pasta-squeezeback.mp4",
       headline: "Everyday staples, made worth sharing.",
@@ -321,7 +321,7 @@ const SITE = {
     },
     {
       title: "Right to Protein",
-      discipline: "Advertising",
+      discipline: ["Advertising", "Art direction"],
       image: "images/right-to-protein/unto-bigger-meat.jpg",
       headline: "The Eagles hunt the rest.",
       description: "AFCON social posts for Right to Protein, putting the brand right in the middle of the football banter.",
@@ -337,7 +337,7 @@ const SITE = {
     },
     {
       title: "Hollandia",
-      discipline: "Advertising",
+      discipline: ["Advertising", "Art direction"],
       image: "videos/hollandia/one-pack.jpg",
       video: "videos/hollandia/one-pack.mp4",
       headline: "1 pack, 3 servings. Made to share.",
