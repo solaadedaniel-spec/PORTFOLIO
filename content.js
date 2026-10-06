@@ -237,6 +237,20 @@ const SITE = {
       ]
     },
     {
+      title: "Cowbell (Proposal)",
+      discipline: "Art direction",
+      image: "images/cowbell/poster.jpg",
+      headline: "Greatness in progress. Watch them shine.",
+      description: "Proposed work: a campaign pitched for Cowbell milk, shown across a poster, a BRT bus wrap, a street billboard and an in-store shelf unit.",
+      role: "Art director (proposal)",
+      media: [
+        "images/cowbell/poster.jpg",
+        "images/cowbell/billboard.jpg",
+        "images/cowbell/brt.jpg",
+        "images/cowbell/shelf.jpg"
+      ]
+    },
+    {
       title: "The North Brick",
       discipline: "Advertising",
       image: "images/north-brick/puffer.jpg",
@@ -260,13 +274,16 @@ const SITE = {
       image: "images/the-place/spida.jpg",
       video: "videos/the-place/pepper-chicken.mp4",
       headline: "With great cravings, comes great responsibility.",
-      description: "Social content for The Place: the Pepper Chicken promo, the Pepperlicious combos and Your Month, Your Meal.",
+      description: "Social content for The Place: the Pepper Chicken promo, the Pepperlicious combos, Your Month, Your Meal, and a Workers’ Day series celebrating the staff behind the counter.",
       role: "Art director (static) and motion designer (video)",
       media: [
         "images/the-place/spida.jpg",
         "videos/the-place/pepper-chicken.mp4",
         "videos/the-place/pepperlicious.mp4",
-        "videos/the-place/month-meal.mp4"
+        "videos/the-place/month-meal.mp4",
+        "images/the-place/workers-day-blessing.jpg",
+        "images/the-place/workers-day-emeka.jpg",
+        "images/the-place/workers-day-tinuke.jpg"
       ]
     },
     {
@@ -303,6 +320,22 @@ const SITE = {
       ]
     },
     {
+      title: "Right to Protein",
+      discipline: "Advertising",
+      image: "images/right-to-protein/unto-bigger-meat.jpg",
+      headline: "The Eagles hunt the rest.",
+      description: "AFCON social posts for Right to Protein, putting the brand right in the middle of the football banter.",
+      role: "Art director",
+      objective: "Seamlessly include the brand in AFCON banter.",
+      insight: "Nothing stays in the minds of Nigerians like football.",
+      direction: "Maintaining strong ties to the brand while using team symbolism as the connecting factor.",
+      concept: "The Eagles hunt the rest: positioning the Nigerian team as the top dog, not the underdog.",
+      media: [
+        "images/right-to-protein/unto-bigger-meat.jpg",
+        "images/right-to-protein/eagles-vs-foxes.jpg"
+      ]
+    },
+    {
       title: "Hollandia",
       discipline: "Advertising",
       image: "videos/hollandia/one-pack.jpg",
@@ -311,6 +344,25 @@ const SITE = {
       description: "Evap campaign for Hollandia Evaporated Milk: animated digital banners and digital billboards across Lagos, at Jakande 5th Roundabout in Lekki and at Allen Roundabout, FTF Toyin, Agidingbi and Aromire Avenue in Ikeja.",
       role: "Motion designer",
       media: ["videos/hollandia/one-pack.mp4", "videos/hollandia/allen-billboard.mp4", "videos/hollandia/jakande-billboard.mp4"]
+    },
+    {
+      title: "Ogilvy, Proactive Social",
+      discipline: "Art direction",
+      image: "images/ogilvy/fathers-day-1.jpg",
+      headline: "They fit in differently.",
+      description: "Proactive social posts for Ogilvy Nigeria: an Autism Awareness Day post and a Father’s Day series, “To the men managing the toughest clients on Earth.”",
+      role: "Art director and copywriter",
+      objective: "Debunk the misconception that autism is an intellectual deficiency.",
+      insight: "Misconceptions label autism as intellectual deficiency. In truth, autistic thinking is not less. It is different, often equal or superior in pattern recognition, depth and honesty.",
+      direction: "Balanced adherence to brand guidelines with scroll-optimised layouts tailored for social platforms.",
+      concept: "The shape sorter is a metaphor for society: neurotypical figures pass through the matching mould, while the autistic figure creates their own.",
+      media: [
+        "images/ogilvy/autism-awareness.jpg",
+        "images/ogilvy/fathers-day-1.jpg",
+        "images/ogilvy/fathers-day-2.jpg",
+        "images/ogilvy/fathers-day-3.jpg",
+        "images/ogilvy/fathers-day-4.jpg"
+      ]
     },
     {
       title: "SmartCash",
@@ -354,9 +406,14 @@ const SITE = {
       image: "videos/ogilvy/leadership.jpg",
       video: "videos/ogilvy/leadership.mp4",
       headline: "Meet the people behind the work.",
-      description: "Leadership introduction film for the Ogilvy group in Nigeria.",
-      role: "Motion designer",
-      media: ["videos/ogilvy/leadership.mp4"]
+      description: "Films for the Ogilvy group in Nigeria: a leadership introduction film, plus a video series I co-edited and designed the intro for.",
+      role: "Motion designer (leadership film); co-video editor and intro designer (video series)",
+      media: [
+        "videos/ogilvy/leadership.mp4",
+        "https://youtu.be/Es_wJTJUp2Y",
+        "https://youtu.be/bIruIh3F5Yg",
+        "https://youtu.be/772g1Bhk5oo"
+      ]
     }
   ],
   /* ---------- SERVICES ---------- */
