@@ -184,6 +184,24 @@ const SITE = {
       ]
     },
     {
+      title: "Heroes",
+      discipline: ["Art direction", "AI"],
+      image: "images/heroes/the-night.jpg",
+      headline: "What if our heroes wore our heritage?",
+      description: "A conceptual series reimagining eight superheroes through Nigerian dress, craft and myth: The Night, The Sky, The Forger, Aqua, Amaka, Dembe, Ifa and the Panther.",
+      role: "Creator and art director",
+      media: [
+        "images/heroes/the-night.jpg",
+        "images/heroes/the-sky.jpg",
+        "images/heroes/the-forger.jpg",
+        "images/heroes/aqua.jpg",
+        "images/heroes/amaka.jpg",
+        "images/heroes/dembe.jpg",
+        "images/heroes/ifa.jpg",
+        "images/heroes/the-panther.jpg"
+      ]
+    },
+    {
       title: "Don’t Hang Up",
       discipline: "AI",
       image: "https://i.ytimg.com/vi/n7QcQwitiE0/maxresdefault.jpg",
@@ -304,11 +322,14 @@ const SITE = {
     {
       title: "Golden Penny Semovita Soupfest 4.0",
       discipline: ["Advertising", "Art direction"],
-      image: "images/golden-penny/soupfest-event-banner.jpg",
+      image: "images/golden-penny/soupfest-kv-group.jpg",
       headline: "Come and taste heritage.",
-      description: "Key visuals for the Golden Penny Semovita Soup Festival 4.0 at Liberty Stadium, Ibadan, rolled out across event banners and feather flags.",
+      description: "Key visuals for the Golden Penny Semovita Soup Festival 4.0 at Liberty Stadium, Ibadan, rolled out across posters, event banners and feather flags.",
       role: "Art director",
       media: [
+        "images/golden-penny/soupfest-kv-group.jpg",
+        "images/golden-penny/soupfest-kv-1.jpg",
+        "images/golden-penny/soupfest-kv-2.jpg",
         "images/golden-penny/soupfest-event-banner.jpg",
         "images/golden-penny/soupfest-feather-flags.jpg"
       ]
