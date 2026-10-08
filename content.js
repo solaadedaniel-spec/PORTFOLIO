@@ -186,17 +186,17 @@ const SITE = {
     {
       title: "Heroes",
       discipline: ["Art direction", "AI"],
-      image: "images/heroes/the-night.jpg",
+      image: "images/heroes/dembe.jpg",
       headline: "What if our heroes wore our heritage?",
       description: "A conceptual series reimagining eight superheroes through Nigerian dress, craft and myth: The Night, The Sky, The Forger, Aqua, Amaka, Dembe, Ifa and the Panther.",
       role: "Creator and art director",
       media: [
+        "images/heroes/dembe.jpg",
         "images/heroes/the-night.jpg",
         "images/heroes/the-sky.jpg",
         "images/heroes/the-forger.jpg",
         "images/heroes/aqua.jpg",
         "images/heroes/amaka.jpg",
-        "images/heroes/dembe.jpg",
         "images/heroes/ifa.jpg",
         "images/heroes/the-panther.jpg"
       ]
