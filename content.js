@@ -287,6 +287,21 @@ const SITE = {
       ]
     },
     {
+      title: "Golden Penny Penne (Proposal)",
+      discipline: ["Advertising", "Art direction"],
+      image: "images/golden-penny/penne-reveal-banner.jpg",
+      headline: "Giving you another reason to love.",
+      description: "Proposed launch campaign for Golden Penny Penne pasta. A teaser series dressed Lagos’ landmark statues behind red curtains, “Another reason to celebrate / to feel liberated / to feel welcome is coming soon”, before the reveal: Giving you another reason to love, on digital and a roadside die-cut.",
+      role: "Art director (proposal)",
+      media: [
+        "images/golden-penny/penne-reveal-banner.jpg",
+        "images/golden-penny/penne-teaser-celebrate.jpg",
+        "images/golden-penny/penne-teaser-liberated.jpg",
+        "images/golden-penny/penne-teaser-welcome.jpg",
+        "images/golden-penny/penne-reveal-diecut.jpg"
+      ]
+    },
+    {
       title: "Golden Penny Semovita",
       discipline: ["Advertising", "Art direction"],
       image: "videos/golden-penny/semovita.jpg",
@@ -306,7 +321,7 @@ const SITE = {
       image: "images/golden-penny/eid-fasts-to-feasts.jpg",
       video: "videos/golden-penny/pasta-squeezeback.mp4",
       headline: "Everyday staples, made worth sharing.",
-      description: "Brand communication across the Golden Penny range: Eid el-Fitr posts, broadcast squeezebacks for Golden Penny pasta and food-cart branding for Amaizing Day Cereal.",
+      description: "Brand communication across the Golden Penny range: Eid el-Fitr posts, a Valentine’s Semovita post, broadcast squeezebacks for Golden Penny pasta and food-cart branding for Amaizing Day Cereal.",
       role: "Art director and motion designer",
       objective: "Build strong visual consistency across executions while adapting the message to each product category and campaign.",
       direction: "Working within established brand guidelines, elevating product storytelling through culturally relevant messaging, real pain points and appetite appeal, balancing commercial clarity with visual engagement.",
@@ -315,6 +330,7 @@ const SITE = {
         "videos/golden-penny/pasta-squeezeback.mp4",
         "videos/golden-penny/pasta-squeezeback-short.mp4",
         "images/golden-penny/eid-reason-to-share.jpg",
+        "images/golden-penny/valentine-semovita.jpg",
         "images/golden-penny/foodcart-front.jpg",
         "images/golden-penny/foodcart-side.jpg"
       ]
