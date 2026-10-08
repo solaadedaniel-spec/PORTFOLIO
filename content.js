@@ -302,6 +302,18 @@ const SITE = {
       ]
     },
     {
+      title: "Golden Penny Semovita Soupfest 4.0",
+      discipline: ["Advertising", "Art direction"],
+      image: "images/golden-penny/soupfest-event-banner.jpg",
+      headline: "Come and taste heritage.",
+      description: "Key visuals for the Golden Penny Semovita Soup Festival 4.0 at Liberty Stadium, Ibadan, rolled out across event banners and feather flags.",
+      role: "Art director",
+      media: [
+        "images/golden-penny/soupfest-event-banner.jpg",
+        "images/golden-penny/soupfest-feather-flags.jpg"
+      ]
+    },
+    {
       title: "Golden Penny Semovita",
       discipline: ["Advertising", "Art direction"],
       image: "videos/golden-penny/semovita.jpg",
@@ -419,14 +431,13 @@ const SITE = {
     {
       title: "Ogilvy Group",
       discipline: "Design",
-      image: "videos/ogilvy/leadership.jpg",
-      video: "videos/ogilvy/leadership.mp4",
+      image: "https://i.ytimg.com/vi/Es_wJTJUp2Y/maxresdefault.jpg",
       headline: "Meet the people behind the work.",
       description: "Films for the Ogilvy group in Nigeria: a leadership introduction film, plus a video series I co-edited and designed the intro for.",
       role: "Motion designer (leadership film); co-video editor and intro designer (video series)",
       media: [
-        "videos/ogilvy/leadership.mp4",
         "https://youtu.be/Es_wJTJUp2Y",
+        "videos/ogilvy/leadership.mp4",
         "https://youtu.be/bIruIh3F5Yg",
         "https://youtu.be/772g1Bhk5oo"
       ]
