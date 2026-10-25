@@ -48,6 +48,108 @@
     }, 2400);
   }
 
+  /* ---------- Intro: trail of project pictures that follows the cursor ---------- */
+  // Uses every picture already in your projects (no extra setup needed).
+  // Small copies live in images/trail/; if one is missing, the full picture is used.
+  const stage = document.getElementById("hero-stage");
+  const isPicture = (src) => src && !/^https?:/.test(src) && /\.(jpe?g|png|webp)$/i.test(src);
+  const perProject = SITE.work.map((item) => [...new Set([item.image, ...(item.media || [])])].filter(isPicture));
+  const pool = [];
+  for (let i = 0; perProject.some((list) => list[i]); i++) {
+    perProject.forEach((list) => { if (list[i]) pool.push(list[i]); }); // mix projects together
+  }
+  const thumb = (src) => "images/trail/" + src.replace(/\.(jpe?g|png|webp)$/i, "").replace(/[\/.]/g, "-") + ".jpg";
+
+  if (stage && pool.length && !reduceMotion) {
+    const trail = document.createElement("div");
+    trail.className = "hero__trail";
+    trail.setAttribute("aria-hidden", "true");
+    stage.prepend(trail);
+
+    const GAP = 42;      // distance between pictures along the path (px)
+    const MAX = 22;      // pictures on screen at once
+    const FOLLOW = 0.2;  // how quickly the trail catches up with the cursor (0 to 1)
+    const LIFE = 1700;   // how long each picture lives (ms)
+    let next = 0, z = 1, travelled = 0, running = false;
+    let target = null, pos = null, lastSpawn = null;
+
+    // Load a few pictures ahead so each one is ready when it appears
+    const preloaded = new Set();
+    const preload = (count) => {
+      for (let k = 0; k < count; k++) {
+        const src = pool[(next + k) % pool.length];
+        if (preloaded.has(src)) continue;
+        preloaded.add(src);
+        new Image().src = thumb(src);
+      }
+    };
+
+    const spawn = (x, y, vx, vy) => {
+      const src = pool[next % pool.length];
+      next++;
+      preload(6);
+      const speed = Math.hypot(vx, vy);
+      const angle = Math.atan2(vy, vx) * 180 / Math.PI;
+      const blur = Math.min(14, speed * 0.6);        // faster movement, stronger blur
+      const stretch = 1 + Math.min(0.45, speed * 0.018);
+      const tilt = (Math.random() - 0.5) * 6;
+      const back = Math.min(90, speed * 3.2);        // glides in from behind along the path
+      const bx = speed ? (vx / speed) * back : 0, by = speed ? (vy / speed) * back : 0;
+
+      // The outer box turns to face the direction of travel, so the blur and stretch run along the motion;
+      // the picture inside turns back so it still looks straight.
+      const item = document.createElement("div");
+      item.className = "hero__trail-item";
+      item.style.zIndex = z++;
+      const img = document.createElement("img");
+      img.alt = "";
+      img.decoding = "async";
+      img.onerror = () => { img.onerror = null; img.src = src; };
+      img.src = thumb(src);
+      img.style.transform = `rotate(${-angle + tilt}deg)`;
+      item.appendChild(img);
+      trail.appendChild(item);
+      while (trail.children.length > MAX) trail.firstElementChild.remove();
+
+      const at = (dx, dy, extra) => `translate(${x + dx}px, ${y + dy}px) translate(-50%, -50%) rotate(${angle}deg) ${extra}`;
+      item.animate([
+        { opacity: 0, transform: at(-bx, -by, `scale(${stretch}, 0.92)`), filter: `blur(${blur}px) brightness(1)` },
+        { opacity: 1, transform: at(0, 0, "scale(1, 1)"), filter: "blur(0px) brightness(1)", offset: 0.16 },
+        { opacity: 1, transform: at(bx * 0.15, by * 0.15, "scale(1, 1)"), filter: "blur(0px) brightness(0.85)", offset: 0.55 },
+        { opacity: 0, transform: at(bx * 0.7, by * 0.7, "scale(0.62, 0.62)"), filter: "blur(3px) brightness(0.35)" }
+      ], { duration: LIFE, easing: "cubic-bezier(0.22, 1, 0.36, 1)", fill: "forwards" }).onfinish = () => item.remove();
+    };
+
+    // Smoothly chase the cursor every frame, dropping a picture each time the path grows by GAP
+    const tick = () => {
+      if (!target || !pos) { running = false; return; }
+      const vx = (target.x - pos.x) * FOLLOW, vy = (target.y - pos.y) * FOLLOW;
+      pos.x += vx; pos.y += vy;
+      travelled += Math.hypot(vx, vy);
+      if (travelled >= GAP) {
+        travelled = 0;
+        spawn(pos.x, pos.y, pos.x - lastSpawn.x, pos.y - lastSpawn.y);
+        lastSpawn = { x: pos.x, y: pos.y };
+      }
+      if (Math.hypot(target.x - pos.x, target.y - pos.y) > 0.5) requestAnimationFrame(tick);
+      else running = false;
+    };
+
+    const move = (clientX, clientY) => {
+      const r = stage.getBoundingClientRect();
+      target = { x: clientX - r.left, y: clientY - r.top };
+      if (!pos) { pos = { ...target }; lastSpawn = { ...target }; preload(8); return; }
+      if (!running) { running = true; requestAnimationFrame(tick); }
+    };
+    const reset = () => { pos = null; target = null; travelled = 0; };
+
+    stage.addEventListener("pointermove", (e) => { if (e.pointerType !== "touch") move(e.clientX, e.clientY); });
+    stage.addEventListener("pointerleave", (e) => { if (e.pointerType !== "touch") reset(); });
+    // On phones, dragging a finger across the intro leaves the same trail
+    stage.addEventListener("touchmove", (e) => move(e.touches[0].clientX, e.touches[0].clientY), { passive: true });
+    stage.addEventListener("touchend", reset);
+  }
+
   /* ---------- Brands strip ---------- */
   // The list is drawn several times so the scrolling loop is seamless.
   const brands = document.getElementById("brands");
@@ -75,8 +177,10 @@
   const grid = document.getElementById("work-grid");
   const filters = document.getElementById("filters");
 
+  // A project can sit in one category ("Design") or several (["Art direction", "AI"])
+  const cats = (item) => [].concat(item.discipline || []);
   // Only show filters for disciplines that have at least one project
-  const used = SITE.disciplines.filter((d) => SITE.work.some((item) => item.discipline === d));
+  const used = SITE.disciplines.filter((d) => SITE.work.some((item) => cats(item).includes(d)));
   if (used.length < 2) filters.hidden = true;
   ["All"].concat(used).forEach((label, i) => {
     const b = document.createElement("button");
@@ -92,7 +196,7 @@
   });
 
   function renderWork(filter) {
-    const visible = filter === "All" ? SITE.work : SITE.work.filter((item) => item.discipline === filter);
+    const visible = filter === "All" ? SITE.work : SITE.work.filter((item) => cats(item).includes(filter));
     grid.innerHTML = "";
     visible.forEach((item, i) => {
       const tile = document.createElement("a");
@@ -104,6 +208,17 @@
       img.src = item.image;
       img.alt = "";
       img.loading = i < 4 ? "eager" : "lazy";
+      // YouTube covers: not every video has every size. YouTube answers a missing size with a
+      // tiny grey placeholder, so step down through the sizes until a real picture loads.
+      if (/i\.ytimg\.com/.test(item.image)) {
+        const sizes = ["maxresdefault", "hq720", "sddefault", "mqdefault"];
+        const nextSize = () => {
+          const k = sizes.findIndex((n) => img.src.includes(n));
+          if (k > -1 && k < sizes.length - 1) img.src = img.src.replace(sizes[k], sizes[k + 1]);
+        };
+        img.onerror = nextSize;
+        img.onload = () => { if (img.naturalWidth <= 120) nextSize(); };
+      }
       tile.appendChild(img);
 
       if (item.video && !reduceMotion) {
@@ -123,7 +238,7 @@
       const t = document.createElement("strong");
       t.textContent = item.title;
       const d = document.createElement("span");
-      d.textContent = item.discipline || "";
+      d.textContent = cats(item).join(", ");
       label.append(t, d);
       tile.appendChild(label);
       grid.appendChild(tile);
@@ -187,18 +302,33 @@
   const pHeadline = document.getElementById("project-headline");
   const pDesc = document.getElementById("project-desc");
   const pRole = document.getElementById("project-role");
+  const pBrief = document.getElementById("project-brief");
+  const BRIEF = [["objective", "Objective"], ["insight", "Insight"], ["direction", "Creative direction"], ["concept", "Concept"]];
   const pMedia = document.getElementById("project-media");
   const pNext = document.getElementById("project-next");
 
   function showProject(item) {
     const i = SITE.work.indexOf(item);
     const next = SITE.work[(i + 1) % SITE.work.length];
-    pMeta.textContent = item.title + (item.discipline ? ", " + item.discipline : "");
+    pMeta.textContent = [item.title, ...cats(item)].join(", ");
     pHeadline.textContent = item.headline || item.title;
     pDesc.textContent = item.description || "";
     pDesc.hidden = !item.description;
     pRole.textContent = item.role ? "Role: " + item.role : "";
     pRole.hidden = !item.role;
+    // Objective / insight / creative direction / concept, for projects that have them
+    pBrief.innerHTML = "";
+    BRIEF.forEach(([key, label]) => {
+      if (!item[key]) return;
+      const box = document.createElement("div");
+      const dt = document.createElement("dt");
+      const dd = document.createElement("dd");
+      dt.textContent = label;
+      dd.textContent = item[key];
+      box.append(dt, dd);
+      pBrief.appendChild(box);
+    });
+    pBrief.hidden = !pBrief.children.length;
     pMedia.innerHTML = "";
     const list = item.media && item.media.length ? item.media : [item.video || item.image];
     list.forEach((src, n) => {

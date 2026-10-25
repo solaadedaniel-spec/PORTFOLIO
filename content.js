@@ -30,7 +30,7 @@ const SITE = {
   rotatingWords: ["Design", "Advertising", "Fashion", "Photography"],
 
   // The filter buttons above your work.
-  disciplines: ["Art direction", "Design", "Advertising", "Photography"],
+  disciplines: ["Art direction", "AI", "Design", "Advertising", "Photography"],
 
   location: "Based in Nigeria",
   email: "solaadedaniel@gmail.com",
@@ -72,13 +72,18 @@ const SITE = {
      Each project is a tile in the grid. Clicking it opens its own page.
 
        title:       short project name (shown when you hover the tile)
-       discipline:  must match one of the disciplines above (for the filters)
+       discipline:  must match one of the disciplines above (for the filters).
+                    For more than one, use a list: ["Art direction", "AI"]
        image:       the cover picture, e.g. "images/delana/cover.jpg"
        video:       optional. A video that plays silently on the tile when
                     hovered, e.g. "videos/chupa-chups.mp4"
        headline:    the big sentence at the top of the project page
        description: a short paragraph about the project (who it was for, what it was)
        role:        what you did, e.g. "Art director", "Motion designer"
+       objective, insight, direction, concept:
+                    optional. Short lines shown on the project page under
+                    "Objective", "Insight", "Creative direction" and "Concept".
+                    Leave any of them out and that heading simply won’t show.
        media:       the pictures and videos shown on the project page, in order.
                     Any file ending in .mp4 is shown as a video with sound.
                     You can also paste a YouTube or Vimeo link here, e.g.
@@ -89,12 +94,15 @@ const SITE = {
   work: [
     {
       title: "Coca-Cola, Share a Coke",
-      discipline: "Advertising",
+      discipline: ["Advertising", "Art direction"],
       image: "videos/coca-cola/kindness-day.jpg",
       video: "videos/coca-cola/kindness-day.mp4",
       headline: "Every G has a nickname. What’s yours?",
       description: "Social content for Share a Coke in Nigeria, built around the nickname bottles: My G, Sabi girl, G.O.A.T, Idan. Posts for cultural moments like International Men’s Day and World Kindness Day, plus rooftop, beach and bestie moments.",
       role: "Motion designer",
+      objective: "Create digital motion assets to run throughout the campaign.",
+      insight: "Ummm… Share a Coke is BACKKKK.",
+      direction: "A Gen Z focused design style.",
       media: [
         "videos/coca-cola/kindness-day.mp4",
         "videos/coca-cola/mens-day.mp4",
@@ -108,7 +116,7 @@ const SITE = {
     },
     {
       title: "Chupa Chups Jellies",
-      discipline: "Advertising",
+      discipline: ["Advertising", "Art direction"],
       image: "videos/chupa-chups/jellies-tvc.jpg",
       video: "videos/chupa-chups/jellies-tvc.mp4",
       headline: "Forever fun, now in jellies.",
@@ -119,18 +127,18 @@ const SITE = {
     {
       title: "Delana Reigns, Issue 01",
       discipline: "Photography",
-      image: "images/delana/camp-1.jpg",
+      image: "images/delana/camp1.jpg",
       headline: "Denim & Leather. Issue 01 for Delana Reigns.",
-      description: "Campaign and lookbook for the Delana Reigns Issue 01 drop: cross-panel leather tops and wide-leg denim, shot against hard black and white walls. Plus the Cross Cheetah Print shoot and the poster for the Delana pop-up in Lekki.",
+      description: "Campaign and lookbook for the Delana Reigns Issue 01 drop: cross-panel leather polos and wide-leg denim, shot against hard black and white walls. Plus the poster for the Delana pop-up in Lekki.",
       role: "Photographer and editor (campaign), art director (pop-up poster)",
+      objective: "Show the clothing naturally: simple and raw, worn rather than displayed, with the focus on details and texture instead of clean product shots.",
+      direction: "Hard light against raw black and red-taped walls, then bright daylight on rough white plaster and concrete. Tight crops pull the eye to the stitching, the croc-embossed leather and the weight of the denim, while loose, everyday poses keep the pieces feeling lived-in.",
       media: [
         "images/delana/sep.jpg",
-        "images/delana/camp-1.jpg",
         "images/delana/camp1.jpg",
         "images/delana/camp-2.jpg",
         "images/delana/black-look.jpg",
         "images/delana/flat-lay.jpg",
-        "images/delana/cross-shoot-july-1cross-shoot-july-2-2.jpg",
         "images/delana/red-top-ffront-web.jpg",
         "images/delana/red-top-backweb.jpg",
         "images/delana/red-bottom-front-web.jpg",
@@ -139,15 +147,28 @@ const SITE = {
         "images/delana/white-top-front-web.jpg",
         "images/delana/white-top-web.jpg",
         "images/delana/white-bottom-web.jpg",
+        "images/delana/cross-shoot-july-1cross-shoot-july-2-2.jpg",
         "images/delana/cross-shoot-july-1cross-shoot-july-2-3.jpg",
-        "images/delana/cheetah-standing.jpg",
-        "images/delana/cheetah-crouch.jpg",
         "images/delana/pop-up-poster.jpg"
       ]
     },
     {
+      title: "Delana Cross Cheetah, 2025",
+      discipline: "Photography",
+      image: "images/delana/cheetah-standing.jpg",
+      headline: "Cross Cheetah. Out in the wild.",
+      description: "Campaign for the Delana Cross Cheetah Print piece, made in house by the Delana team and shot outdoors in tall grass.",
+      role: "Photographer and editor",
+      objective: "Show the clothing naturally: simple and raw, worn rather than displayed, with the focus on details and texture instead of clean product shots.",
+      direction: "Taken out of the studio and into tall grass under full midday sun. No set, no styling props, just natural light, skin and greenery, so the cheetah print and the texture of the fabric speak for themselves.",
+      media: [
+        "images/delana/cheetah-standing.jpg",
+        "images/delana/cheetah-crouch.jpg"
+      ]
+    },
+    {
       title: "Baru, Age of Bronze",
-      discipline: "Art direction",
+      discipline: ["Art direction", "AI"],
       image: "images/baru/matriarch.jpg",
       headline: "A world where bronze rules all.",
       description: "Baru is a conceptual world I built from scratch: its people, its armour, its rituals and its rulers, all forged in bronze.",
@@ -163,12 +184,98 @@ const SITE = {
       ]
     },
     {
+      title: "Heroes",
+      discipline: ["Art direction", "AI"],
+      image: "images/heroes/dembe.jpg",
+      headline: "What if our heroes wore our heritage?",
+      description: "A conceptual series reimagining eight superheroes through Nigerian dress, craft and myth: The Night, The Sky, The Forger, Aqua, Amaka, Dembe, Ifa and the Panther.",
+      role: "Creator and art director",
+      media: [
+        "images/heroes/dembe.jpg",
+        "images/heroes/the-night.jpg",
+        "images/heroes/the-sky.jpg",
+        "images/heroes/the-forger.jpg",
+        "images/heroes/aqua.jpg",
+        "images/heroes/amaka.jpg",
+        "images/heroes/ifa.jpg",
+        "images/heroes/the-panther.jpg"
+      ]
+    },
+    {
+      title: "Don’t Hang Up",
+      discipline: "AI",
+      image: "https://i.ytimg.com/vi/n7QcQwitiE0/maxresdefault.jpg",
+      headline: "Don’t Hang Up.",
+      description: "A 30-second short film made with AI, directed by me.",
+      role: "Director",
+      media: ["https://youtu.be/n7QcQwitiE0"]
+    },
+    {
+      title: "To Love Is To Die",
+      discipline: "AI",
+      image: "https://i.ytimg.com/vi/HUwlKbKBORs/maxresdefault.jpg",
+      headline: "To Love Is To Die.",
+      description: "A 45-second short film made with AI. Written by Kay Ugwuzor, directed by me.",
+      role: "Director",
+      media: ["https://youtu.be/HUwlKbKBORs"]
+    },
+    {
+      title: "9–5",
+      discipline: "Photography",
+      image: "images/9-5/9-5-01.jpg",
+      headline: "Humankind cannot gain anything without first giving something in return.",
+      description: "A personal photo series on the everyday hustler at work in Lagos: hawkers weaving through traffic, passengers packed into the back of a bus, riders and roadside workers keeping the city moving.",
+      role: "Photographer and editor (personal project)",
+      direction: "Shot on the move from inside traffic, through windscreens and side mirrors. Grain, warm faded colour and split-frame collages lay two moments side by side, so each frame feels like the pace of a commute.",
+      media: [
+        "images/9-5/9-5-01.jpg",
+        "images/9-5/9-5-02.jpg",
+        "images/9-5/9-5-03.jpg",
+        "images/9-5/9-5-04.jpg",
+        "images/9-5/9-5-05.jpg",
+        "images/9-5/9-5-06.jpg"
+      ]
+    },
+    {
+      title: "Golden Penny Food Fest 2026 (Proposal)",
+      discipline: "Art direction",
+      image: "images/golden-penny/foodfest-poster.jpg",
+      headline: "A louder, hungrier look for Food Fest.",
+      description: "Proposed work: a new masthead and visual identity pitched for Golden Penny Food Fest 2026 in Victoria Island, Lagos, shown across posters, web banners, the event gazebo, parasols and wristbands.",
+      role: "Art director (proposal)",
+      objective: "Create a new expressive masthead and visual direction for the upcoming Food Fest.",
+      direction: "Using colour as the basis to excite the audience and build anticipation for the day.",
+      media: [
+        "images/golden-penny/foodfest-masthead.jpg",
+        "images/golden-penny/foodfest-poster.jpg",
+        "images/golden-penny/foodfest-gazebo.jpg",
+        "images/golden-penny/foodfest-banner.jpg",
+        "images/golden-penny/foodfest-wristband.jpg",
+        "images/golden-penny/foodfest-parasol.jpg"
+      ]
+    },
+    {
+      title: "Cowbell (Proposal)",
+      discipline: "Art direction",
+      image: "images/cowbell/poster.jpg",
+      headline: "Greatness in progress. Watch them shine.",
+      description: "Proposed work: a campaign pitched for Cowbell milk, shown across a poster, a BRT bus wrap, a street billboard and an in-store shelf unit.",
+      role: "Art director (proposal)",
+      media: [
+        "images/cowbell/poster.jpg",
+        "images/cowbell/billboard.jpg",
+        "images/cowbell/brt.jpg",
+        "images/cowbell/shelf.jpg"
+      ]
+    },
+    {
       title: "The North Brick",
-      discipline: "Advertising",
+      discipline: ["Advertising", "Art direction"],
       image: "images/north-brick/puffer.jpg",
       headline: "What if LEGO and The North Face made a collection together?",
       description: "A spec ad imagining The North Brick: one logo built from both brands, carried across a puffer, a range of backpacks and a buildable mountain set.",
       role: "Art director",
+      concept: "Combining two global brands that have nothing to do with each other into one cohesive brand, then expanding it.",
       media: [
         "images/north-brick/cover.jpg",
         "images/north-brick/logo.jpg",
@@ -181,28 +288,130 @@ const SITE = {
     },
     {
       title: "The Place",
-      discipline: "Advertising",
+      discipline: ["Advertising", "Art direction"],
       image: "images/the-place/spida.jpg",
       video: "videos/the-place/pepper-chicken.mp4",
       headline: "With great cravings, comes great responsibility.",
-      description: "Social content for The Place: the Pepper Chicken promo, the Pepperlicious combos and Your Month, Your Meal.",
+      description: "Social content for The Place: the Pepper Chicken promo, the Pepperlicious combos, Your Month, Your Meal, and a Workers’ Day series celebrating the staff behind the counter.",
       role: "Art director (static) and motion designer (video)",
       media: [
         "images/the-place/spida.jpg",
         "videos/the-place/pepper-chicken.mp4",
         "videos/the-place/pepperlicious.mp4",
-        "videos/the-place/month-meal.mp4"
+        "videos/the-place/month-meal.mp4",
+        "images/the-place/workers-day-blessing.jpg",
+        "images/the-place/workers-day-emeka.jpg",
+        "images/the-place/workers-day-tinuke.jpg"
+      ]
+    },
+    {
+      title: "Golden Penny Penne (Proposal)",
+      discipline: ["Advertising", "Art direction"],
+      image: "images/golden-penny/penne-reveal-banner.jpg",
+      headline: "Giving you another reason to love.",
+      description: "Proposed launch campaign for Golden Penny Penne pasta. A teaser series dressed Lagos’ landmark statues behind red curtains, “Another reason to celebrate / to feel liberated / to feel welcome is coming soon”, before the reveal: Giving you another reason to love, on digital and a roadside die-cut.",
+      role: "Art director (proposal)",
+      media: [
+        "images/golden-penny/penne-reveal-banner.jpg",
+        "images/golden-penny/penne-teaser-celebrate.jpg",
+        "images/golden-penny/penne-teaser-liberated.jpg",
+        "images/golden-penny/penne-teaser-welcome.jpg",
+        "images/golden-penny/penne-reveal-diecut.jpg"
+      ]
+    },
+    {
+      title: "Golden Penny Semovita Soupfest 4.0",
+      discipline: ["Advertising", "Art direction"],
+      image: "images/golden-penny/soupfest-kv-group.jpg",
+      headline: "Come and taste heritage.",
+      description: "Key visuals for the Golden Penny Semovita Soup Festival 4.0 at Liberty Stadium, Ibadan, rolled out across posters, event banners and feather flags.",
+      role: "Art director",
+      media: [
+        "images/golden-penny/soupfest-kv-group.jpg",
+        "images/golden-penny/soupfest-kv-1.jpg",
+        "images/golden-penny/soupfest-kv-2.jpg",
+        "images/golden-penny/soupfest-event-banner.jpg",
+        "images/golden-penny/soupfest-feather-flags.jpg"
+      ]
+    },
+    {
+      title: "Golden Penny Semovita",
+      discipline: ["Advertising", "Art direction"],
+      image: "videos/golden-penny/semovita.jpg",
+      video: "videos/golden-penny/semovita.mp4",
+      headline: "One product. Many possibilities.",
+      description: "Motion piece for Golden Penny Semovita, setting one pack against a spread of everyday meals.",
+      role: "Art director and motion designer",
+      objective: "Reinforce Golden Penny Semo as a flexible staple suitable across multiple meals and households.",
+      insight: "Versatility increases everyday relevance and long-term brand recall.",
+      direction: "Visual storytelling showcased multiple serving possibilities while keeping strong product dominance and appetite appeal.",
+      concept: "One product. Many possibilities: a dependable foundation across diverse cultural contexts.",
+      media: ["videos/golden-penny/semovita.mp4"]
+    },
+    {
+      title: "Golden Penny",
+      discipline: ["Advertising", "Art direction"],
+      image: "images/golden-penny/eid-fasts-to-feasts.jpg",
+      video: "videos/golden-penny/pasta-squeezeback.mp4",
+      headline: "Everyday staples, made worth sharing.",
+      description: "Brand communication across the Golden Penny range: Eid el-Fitr posts, a Valentine’s Semovita post, broadcast squeezebacks for Golden Penny pasta and food-cart branding for Amaizing Day Cereal.",
+      role: "Art director and motion designer",
+      objective: "Build strong visual consistency across executions while adapting the message to each product category and campaign.",
+      direction: "Working within established brand guidelines, elevating product storytelling through culturally relevant messaging, real pain points and appetite appeal, balancing commercial clarity with visual engagement.",
+      media: [
+        "images/golden-penny/eid-fasts-to-feasts.jpg",
+        "videos/golden-penny/pasta-squeezeback.mp4",
+        "videos/golden-penny/pasta-squeezeback-short.mp4",
+        "images/golden-penny/eid-reason-to-share.jpg",
+        "images/golden-penny/valentine-semovita.jpg",
+        "images/golden-penny/foodcart-front.jpg",
+        "images/golden-penny/foodcart-side.jpg"
+      ]
+    },
+    {
+      title: "Right to Protein",
+      discipline: ["Advertising", "Art direction"],
+      image: "images/right-to-protein/unto-bigger-meat.jpg",
+      headline: "The Eagles hunt the rest.",
+      description: "AFCON social posts for Right to Protein, putting the brand right in the middle of the football banter.",
+      role: "Art director",
+      objective: "Seamlessly include the brand in AFCON banter.",
+      insight: "Nothing stays in the minds of Nigerians like football.",
+      direction: "Maintaining strong ties to the brand while using team symbolism as the connecting factor.",
+      concept: "The Eagles hunt the rest: positioning the Nigerian team as the top dog, not the underdog.",
+      media: [
+        "images/right-to-protein/unto-bigger-meat.jpg",
+        "images/right-to-protein/eagles-vs-foxes.jpg"
       ]
     },
     {
       title: "Hollandia",
-      discipline: "Advertising",
+      discipline: ["Advertising", "Art direction"],
       image: "videos/hollandia/one-pack.jpg",
       video: "videos/hollandia/one-pack.mp4",
       headline: "1 pack, 3 servings. Made to share.",
-      description: "Evap campaign for Hollandia Evaporated Milk: animated digital banners and a digital billboard at Jakande 5th Roundabout, Lekki.",
+      description: "Evap campaign for Hollandia Evaporated Milk: animated digital banners and digital billboards across Lagos, at Jakande 5th Roundabout in Lekki and at Allen Roundabout, FTF Toyin, Agidingbi and Aromire Avenue in Ikeja.",
       role: "Motion designer",
-      media: ["videos/hollandia/one-pack.mp4", "videos/hollandia/jakande-billboard.mp4"]
+      media: ["videos/hollandia/one-pack.mp4", "videos/hollandia/allen-billboard.mp4", "videos/hollandia/jakande-billboard.mp4"]
+    },
+    {
+      title: "Ogilvy, Proactive Social",
+      discipline: "Art direction",
+      image: "images/ogilvy/fathers-day-1.jpg",
+      headline: "They fit in differently.",
+      description: "Proactive social posts for Ogilvy Nigeria: an Autism Awareness Day post and a Father’s Day series, “To the men managing the toughest clients on Earth.”",
+      role: "Art director and copywriter",
+      objective: "Debunk the misconception that autism is an intellectual deficiency.",
+      insight: "Misconceptions label autism as intellectual deficiency. In truth, autistic thinking is not less. It is different, often equal or superior in pattern recognition, depth and honesty.",
+      direction: "Balanced adherence to brand guidelines with scroll-optimised layouts tailored for social platforms.",
+      concept: "The shape sorter is a metaphor for society: neurotypical figures pass through the matching mould, while the autistic figure creates their own.",
+      media: [
+        "images/ogilvy/autism-awareness.jpg",
+        "images/ogilvy/fathers-day-1.jpg",
+        "images/ogilvy/fathers-day-2.jpg",
+        "images/ogilvy/fathers-day-3.jpg",
+        "images/ogilvy/fathers-day-4.jpg"
+      ]
     },
     {
       title: "SmartCash",
@@ -212,6 +421,10 @@ const SITE = {
       headline: "Funding your wallet, in four simple steps.",
       description: "How-to explainer for SmartCash showing customers how to fund their wallet from any banking app.",
       role: "Motion designer",
+      objective: "Position SmartCash as a relatable, trustworthy financial companion, especially during high-spend festive periods.",
+      insight: "Financial brands often feel distant; familiarity builds trust.",
+      direction: "Human-centred visuals, a softened brand tone and warm festive cues reinforced approachability.",
+      concept: "Finance without intimidation: a friendly neighbour simplifying everyday transactions.",
       media: ["videos/smartcash/how-to.mp4"]
     },
     {
@@ -222,6 +435,7 @@ const SITE = {
       headline: "One workspace for everything your team does.",
       description: "Product film for OnBuddy, the work management platform.",
       role: "Motion designer",
+      objective: "Entertain and educate the audience on the features of each product, seamlessly.",
       media: ["videos/onbuddy/film.mp4"]
     },
     {
@@ -232,17 +446,22 @@ const SITE = {
       headline: "From idea to app design, faster.",
       description: "Product film for Daisy, showing a prompt turned into a full app design.",
       role: "Motion designer",
+      objective: "Entertain and educate the audience on the features of each product, seamlessly.",
       media: ["videos/daisy/film.mp4"]
     },
     {
       title: "Ogilvy Group",
       discipline: "Design",
-      image: "videos/ogilvy/leadership.jpg",
-      video: "videos/ogilvy/leadership.mp4",
+      image: "https://i.ytimg.com/vi/Es_wJTJUp2Y/maxresdefault.jpg",
       headline: "Meet the people behind the work.",
-      description: "Leadership introduction film for the Ogilvy group in Nigeria.",
-      role: "Motion designer",
-      media: ["videos/ogilvy/leadership.mp4"]
+      description: "Films for the Ogilvy group in Nigeria: a leadership introduction film, plus a video series I co-edited and designed the intro for.",
+      role: "Motion designer (leadership film); co-video editor and intro designer (video series)",
+      media: [
+        "https://youtu.be/Es_wJTJUp2Y",
+        "videos/ogilvy/leadership.mp4",
+        "https://youtu.be/bIruIh3F5Yg",
+        "https://youtu.be/772g1Bhk5oo"
+      ]
     }
   ],
   /* ---------- SERVICES ---------- */
