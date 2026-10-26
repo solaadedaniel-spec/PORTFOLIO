@@ -221,7 +221,7 @@ const SITE = {
     },
     {
       title: "TVS, 5 Million Customers",
-      discipline: ["Advertising", "Art direction"],
+      discipline: ["Advertising", "Art direction", "AI"],
       image: "https://i.ytimg.com/vi/lzFcpqfyd1I/maxresdefault.jpg",
       headline: "Celebrating 5 million customers.",
       description: "A film series for TVS Nigeria, celebrating the brand’s milestone of reaching 5 million customers.",
