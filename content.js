@@ -220,6 +220,21 @@ const SITE = {
       media: ["https://youtu.be/HUwlKbKBORs"]
     },
     {
+      title: "TVS, 5 Million Customers",
+      discipline: ["Advertising", "Art direction"],
+      image: "https://i.ytimg.com/vi/lzFcpqfyd1I/maxresdefault.jpg",
+      headline: "Celebrating 5 million customers.",
+      description: "A film series for TVS Nigeria, celebrating the brand’s milestone of reaching 5 million customers.",
+      role: "Art director",
+      media: [
+        "https://youtu.be/lzFcpqfyd1I",
+        "https://youtu.be/bjxGW4YY4fY",
+        "https://youtu.be/zvv6ILDx70o",
+        "https://youtu.be/Nlq1NlgUYmk",
+        "https://youtu.be/e7LvQQz9ZwM"
+      ]
+    },
+    {
       title: "9–5",
       discipline: "Photography",
       image: "images/9-5/9-5-01.jpg",
@@ -354,11 +369,12 @@ const SITE = {
       image: "images/golden-penny/eid-fasts-to-feasts.jpg",
       video: "videos/golden-penny/pasta-squeezeback.mp4",
       headline: "Everyday staples, made worth sharing.",
-      description: "Brand communication across the Golden Penny range: Eid el-Fitr posts, a Valentine’s Semovita post, broadcast squeezebacks for Golden Penny pasta and food-cart branding for Amaizing Day Cereal.",
+      description: "Brand communication across the Golden Penny range: an Independence Day post, Eid el-Fitr posts, a Valentine’s Semovita post, broadcast squeezebacks for Golden Penny pasta and food-cart branding for Amaizing Day Cereal.",
       role: "Art director and motion designer",
       objective: "Build strong visual consistency across executions while adapting the message to each product category and campaign.",
       direction: "Working within established brand guidelines, elevating product storytelling through culturally relevant messaging, real pain points and appetite appeal, balancing commercial clarity with visual engagement.",
       media: [
+        "images/golden-penny/independence-day.jpg",
         "images/golden-penny/eid-fasts-to-feasts.jpg",
         "videos/golden-penny/pasta-squeezeback.mp4",
         "videos/golden-penny/pasta-squeezeback-short.mp4",
