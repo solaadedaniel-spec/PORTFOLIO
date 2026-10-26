@@ -2,6 +2,8 @@
 
 A single-page portfolio. Plain HTML, CSS and JavaScript, no build step.
 
+**Live site:** https://sola-creativeportfolio.vercel.app/
+
 ## Editing (no coding needed)
 
 1. Open **`content.js`**. All the text on the site lives there: name, role, bio, projects, services, email and social links.
@@ -28,9 +30,8 @@ Tips:
 | `main.js` | Builds the page from `content.js` |
 | `images/` | Your pictures |
 
-## Putting it online (free, with GitHub Pages)
+## Putting it online
 
-1. On github.com, open your PORTFOLIO repository and click **Add file > Upload files**.
-2. Drag in everything from this folder, then click **Commit changes**.
-3. Go to **Settings > Pages**, set Source to **Deploy from a branch**, pick `main` and `/ (root)`, then **Save**.
-4. After a minute your site will be live at `https://solaadedaniel-spec.github.io/PORTFOLIO/`.
+The site is live on Vercel at https://sola-creativeportfolio.vercel.app/, connected to this repo's `main` branch — any push to `main` deploys automatically, usually within a minute or two.
+
+GitHub Pages is also set up as a backup at `https://solaadedaniel-spec.github.io/PORTFOLIO/`, building from the same `main` branch, but Vercel is the address to share.
