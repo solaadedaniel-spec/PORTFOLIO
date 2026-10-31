@@ -93,6 +93,51 @@ const SITE = {
      Add a project by copying a whole { ... }, block. Delete one the same way. */
   work: [
     {
+      title: "TVS, 5 Million Customers",
+      discipline: ["Advertising", "Art direction", "AI"],
+      image: "https://i.ytimg.com/vi/lzFcpqfyd1I/maxresdefault.jpg",
+      headline: "Celebrating 5 million customers.",
+      description: "A film series for TVS Nigeria, celebrating the brand’s milestone of reaching 5 million customers.",
+      role: "Art director",
+      media: [
+        "https://youtu.be/lzFcpqfyd1I",
+        "https://youtu.be/bjxGW4YY4fY",
+        "https://youtu.be/zvv6ILDx70o",
+        "https://youtu.be/Nlq1NlgUYmk",
+        "https://youtu.be/e7LvQQz9ZwM"
+      ]
+    },
+    {
+      title: "Chupa Chups Jellies",
+      discipline: ["Advertising", "Art direction"],
+      image: "videos/chupa-chups/jellies-tvc.jpg",
+      video: "videos/chupa-chups/jellies-tvc.mp4",
+      headline: "Forever fun, now in jellies.",
+      description: "15-second broadcast commercial for Chupa Chups Jellies.",
+      role: "Assistant editor",
+      media: ["videos/chupa-chups/jellies-tvc.mp4"]
+    },
+    {
+      title: "Brief Roulette",
+      discipline: ["Design", "Advertising", "Art direction"],
+      image: "images/brief-roulette/cover.jpg",
+      video: "videos/brief-roulette/explainer.mp4",
+      headline: "Pull the gen. Get your brief.",
+      description: "A free tool for designers without a client: pull the lever for a random, Nigerian-flavoured creative brief, then a shelf of free lessons from working designers to help you pull it off. Concepted, designed and built from scratch, then launched with its own carousel and video campaign.",
+      role: "Concept, design, art direction and build",
+      link: "https://brief-roulette-tau.vercel.app/",
+      linkLabel: "Visit Brief Roulette",
+      media: [
+        "videos/brief-roulette/explainer.mp4",
+        "images/brief-roulette/cover.jpg",
+        "images/brief-roulette/01-no-brief.jpg",
+        "images/brief-roulette/02-pull-the-gen.jpg",
+        "images/brief-roulette/03-the-brief.jpg",
+        "images/brief-roulette/04-how-it-works.jpg",
+        "videos/brief-roulette/teaser.mp4"
+      ]
+    },
+    {
       title: "Coca-Cola, Share a Coke",
       discipline: ["Advertising", "Art direction"],
       image: "videos/coca-cola/kindness-day.jpg",
@@ -113,16 +158,6 @@ const SITE = {
         "videos/coca-cola/besties.mp4",
         "videos/coca-cola/can-hug.mp4"
       ]
-    },
-    {
-      title: "Chupa Chups Jellies",
-      discipline: ["Advertising", "Art direction"],
-      image: "videos/chupa-chups/jellies-tvc.jpg",
-      video: "videos/chupa-chups/jellies-tvc.mp4",
-      headline: "Forever fun, now in jellies.",
-      description: "15-second broadcast commercial for Chupa Chups Jellies.",
-      role: "Assistant editor",
-      media: ["videos/chupa-chups/jellies-tvc.mp4"]
     },
     {
       title: "Delana Reigns, Issue 01",
@@ -218,21 +253,6 @@ const SITE = {
       description: "A 45-second short film made with AI. Written by Kay Ugwuzor, directed by me.",
       role: "Director",
       media: ["https://youtu.be/HUwlKbKBORs"]
-    },
-    {
-      title: "TVS, 5 Million Customers",
-      discipline: ["Advertising", "Art direction", "AI"],
-      image: "https://i.ytimg.com/vi/lzFcpqfyd1I/maxresdefault.jpg",
-      headline: "Celebrating 5 million customers.",
-      description: "A film series for TVS Nigeria, celebrating the brand’s milestone of reaching 5 million customers.",
-      role: "Art director",
-      media: [
-        "https://youtu.be/lzFcpqfyd1I",
-        "https://youtu.be/bjxGW4YY4fY",
-        "https://youtu.be/zvv6ILDx70o",
-        "https://youtu.be/Nlq1NlgUYmk",
-        "https://youtu.be/e7LvQQz9ZwM"
-      ]
     },
     {
       title: "9–5",

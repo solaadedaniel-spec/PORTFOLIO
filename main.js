@@ -302,6 +302,7 @@
   const pHeadline = document.getElementById("project-headline");
   const pDesc = document.getElementById("project-desc");
   const pRole = document.getElementById("project-role");
+  const pLink = document.getElementById("project-link");
   const pBrief = document.getElementById("project-brief");
   const BRIEF = [["objective", "Objective"], ["insight", "Insight"], ["direction", "Creative direction"], ["concept", "Concept"]];
   const pMedia = document.getElementById("project-media");
@@ -316,6 +317,10 @@
     pDesc.hidden = !item.description;
     pRole.textContent = item.role ? "Role: " + item.role : "";
     pRole.hidden = !item.role;
+    // Link to a live site, for projects you built, e.g. { link: "https://...", linkLabel: "Visit the live tool" }
+    pLink.href = item.link || "";
+    pLink.textContent = (item.linkLabel || "Visit the live site") + " ↗";
+    pLink.hidden = !item.link;
     // Objective / insight / creative direction / concept, for projects that have them
     pBrief.innerHTML = "";
     BRIEF.forEach(([key, label]) => {
