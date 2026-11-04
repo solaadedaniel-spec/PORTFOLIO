@@ -117,11 +117,11 @@ const SITE = {
       media: [
         "images/glo/orchestra-1.jpg",
         "images/glo/orchestra-2.jpg",
-        "images/glo/no-dream-99.jpg",
         "images/glo/reach-out.jpg",
         "images/glo/more-dreams.jpg",
         "images/glo/if-its-worth.jpg",
-        "images/glo/festival-of-joy.jpg"
+        "images/glo/festival-of-joy.jpg",
+        "images/glo/no-dream-99.jpg"
       ]
     },
     {
