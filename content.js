@@ -108,6 +108,23 @@ const SITE = {
       ]
     },
     {
+      title: "Glo, Key Visuals (Proposal)",
+      discipline: ["Advertising", "Art direction"],
+      image: "images/glo/orchestra-1.jpg",
+      headline: "Data is yours to command.",
+      description: "Proposed key visuals for Glo’s Unlimited data offer. A Glo Beyond series casts people as conductors of their own data, followed by a Never Settle for Less series that blasts big 3D headlines through the dreams, streams and finishes of everyday life, plus a Festival of Joy promo.",
+      role: "Art director (proposal)",
+      media: [
+        "images/glo/orchestra-1.jpg",
+        "images/glo/orchestra-2.jpg",
+        "images/glo/no-dream-99.jpg",
+        "images/glo/reach-out.jpg",
+        "images/glo/more-dreams.jpg",
+        "images/glo/if-its-worth.jpg",
+        "images/glo/festival-of-joy.jpg"
+      ]
+    },
+    {
       title: "Chupa Chups Jellies",
       discipline: ["Advertising", "Art direction"],
       image: "videos/chupa-chups/jellies-tvc.jpg",
@@ -389,7 +406,7 @@ const SITE = {
       image: "images/golden-penny/eid-fasts-to-feasts.jpg",
       video: "videos/golden-penny/pasta-squeezeback.mp4",
       headline: "Everyday staples, made worth sharing.",
-      description: "Brand communication across the Golden Penny range: an Independence Day post, Eid el-Fitr posts, a Valentine’s Semovita post, broadcast squeezebacks for Golden Penny pasta and food-cart branding for Amaizing Day Cereal.",
+      description: "Brand communication across the Golden Penny range: an Independence Day post, Eid el-Fitr posts, a Valentine’s Semovita post, broadcast squeezebacks for Golden Penny pasta and food-cart branding for Amaizing Day Cereal and a below-the-line kit of Christmas booths, a food truck, chef jackets and kitchen kiosks.",
       role: "Art director and motion designer",
       objective: "Build strong visual consistency across executions while adapting the message to each product category and campaign.",
       direction: "Working within established brand guidelines, elevating product storytelling through culturally relevant messaging, real pain points and appetite appeal, balancing commercial clarity with visual engagement.",
@@ -401,7 +418,8 @@ const SITE = {
         "images/golden-penny/eid-reason-to-share.jpg",
         "images/golden-penny/valentine-semovita.jpg",
         "images/golden-penny/foodcart-front.jpg",
-        "images/golden-penny/foodcart-side.jpg"
+        "images/golden-penny/foodcart-side.jpg",
+        "images/golden-penny/btl-christmas-kitchen.jpg"
       ]
     },
     {
