@@ -30,7 +30,7 @@ const SITE = {
   rotatingWords: ["Design", "Advertising", "Fashion", "Photography"],
 
   // The filter buttons above your work.
-  disciplines: ["Art direction", "AI", "Design", "Advertising", "Photography"],
+  disciplines: ["Art direction", "AI", "Design", "Animation", "Advertising", "Photography"],
 
   location: "Based in Nigeria",
   email: "solaadedaniel@gmail.com",
@@ -469,7 +469,7 @@ const SITE = {
     },
     {
       title: "SmartCash",
-      discipline: "Design",
+      discipline: "Animation",
       image: "videos/smartcash/how-to.jpg",
       video: "videos/smartcash/how-to.mp4",
       headline: "Funding your wallet, in four simple steps.",
@@ -483,7 +483,7 @@ const SITE = {
     },
     {
       title: "OnBuddy",
-      discipline: "Design",
+      discipline: "Animation",
       image: "videos/onbuddy/film.jpg",
       video: "videos/onbuddy/film.mp4",
       headline: "One workspace for everything your team does.",
@@ -494,7 +494,7 @@ const SITE = {
     },
     {
       title: "Daisy",
-      discipline: "Design",
+      discipline: "Animation",
       image: "videos/daisy/film.jpg",
       video: "videos/daisy/film.mp4",
       headline: "From idea to app design, faster.",
