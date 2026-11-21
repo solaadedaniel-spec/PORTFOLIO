@@ -30,7 +30,7 @@ const SITE = {
   rotatingWords: ["Design", "Advertising", "Fashion", "Photography"],
 
   // The filter buttons above your work.
-  disciplines: ["Art direction", "AI", "Design", "Animation", "Advertising", "Photography"],
+  disciplines: ["Art direction", "AI", "Design", "Motion graphics", "Advertising", "Photography"],
 
   location: "Based in Nigeria",
   email: "solaadedaniel@gmail.com",
@@ -178,7 +178,7 @@ const SITE = {
     },
     {
       title: "Casalink, Overview Explainer",
-      discipline: "Animation",
+      discipline: "Motion graphics",
       image: "https://i.ytimg.com/vi/vMduGRTuWLw/maxresdefault.jpg",
       headline: "Meet Casalink.",
       description: "An animated overview explainer for Casalink, a SaaS platform, showing what the product does and who it is for.",
@@ -478,7 +478,7 @@ const SITE = {
     },
     {
       title: "SmartCash",
-      discipline: "Animation",
+      discipline: "Motion graphics",
       image: "videos/smartcash/how-to.jpg",
       video: "videos/smartcash/how-to.mp4",
       headline: "Funding your wallet, in four simple steps.",
@@ -492,7 +492,7 @@ const SITE = {
     },
     {
       title: "OnBuddy",
-      discipline: "Animation",
+      discipline: "Motion graphics",
       image: "videos/onbuddy/film.jpg",
       video: "videos/onbuddy/film.mp4",
       headline: "One workspace for everything your team does.",
@@ -503,7 +503,7 @@ const SITE = {
     },
     {
       title: "Daisy",
-      discipline: "Animation",
+      discipline: "Motion graphics",
       image: "videos/daisy/film.jpg",
       video: "videos/daisy/film.mp4",
       headline: "From idea to app design, faster.",
