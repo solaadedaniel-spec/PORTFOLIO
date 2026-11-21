@@ -177,6 +177,15 @@ const SITE = {
       ]
     },
     {
+      title: "Casalink, Overview Explainer",
+      discipline: "Animation",
+      image: "https://i.ytimg.com/vi/vMduGRTuWLw/maxresdefault.jpg",
+      headline: "Meet Casalink.",
+      description: "An animated overview explainer for Casalink, a SaaS platform, showing what the product does and who it is for.",
+      role: "Motion designer",
+      media: ["https://youtu.be/vMduGRTuWLw"]
+    },
+    {
       title: "Delana Reigns, Issue 01",
       discipline: "Photography",
       image: "images/delana/camp1.jpg",
