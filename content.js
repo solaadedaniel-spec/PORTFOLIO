@@ -514,7 +514,7 @@ const SITE = {
     },
     {
       title: "Ogilvy Group",
-      discipline: "Design",
+      discipline: "Motion graphics",
       image: "https://i.ytimg.com/vi/Es_wJTJUp2Y/maxresdefault.jpg",
       headline: "Meet the people behind the work.",
       description: "Films for the Ogilvy group in Nigeria: a leadership introduction film, plus a video series I co-edited and designed the intro for.",
