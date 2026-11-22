@@ -502,6 +502,17 @@ const SITE = {
       media: ["videos/onbuddy/film.mp4"]
     },
     {
+      title: "OnBuddy, Explainer",
+      discipline: "Motion graphics",
+      image: "https://i.ytimg.com/vi/27BkMVNR0mw/maxresdefault.jpg",
+      headline: "One workspace for everything your team does.",
+      description: "An animated explainer for OnBuddy, the work management platform, walking through what it does and how teams use it.",
+      role: "Motion designer",
+      link: "https://onbuddy.ai/",
+      linkLabel: "Visit OnBuddy",
+      media: ["https://youtu.be/27BkMVNR0mw"]
+    },
+    {
       title: "Daisy",
       discipline: "Motion graphics",
       image: "videos/daisy/film.jpg",
