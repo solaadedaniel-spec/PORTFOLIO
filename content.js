@@ -508,8 +508,6 @@ const SITE = {
       headline: "One workspace for everything your team does.",
       description: "An animated explainer for OnBuddy, the work management platform, walking through what it does and how teams use it.",
       role: "Motion designer",
-      link: "https://onbuddy.ai/",
-      linkLabel: "Visit OnBuddy",
       media: ["https://youtu.be/27BkMVNR0mw"]
     },
     {
