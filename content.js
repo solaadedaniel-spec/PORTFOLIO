@@ -491,17 +491,6 @@ const SITE = {
       media: ["videos/smartcash/how-to.mp4"]
     },
     {
-      title: "OnBuddy",
-      discipline: "Motion graphics",
-      image: "videos/onbuddy/film.jpg",
-      video: "videos/onbuddy/film.mp4",
-      headline: "One workspace for everything your team does.",
-      description: "Product film for OnBuddy, the work management platform.",
-      role: "Motion designer",
-      objective: "Entertain and educate the audience on the features of each product, seamlessly.",
-      media: ["videos/onbuddy/film.mp4"]
-    },
-    {
       title: "OnBuddy, Explainer",
       discipline: "Motion graphics",
       image: "https://i.ytimg.com/vi/27BkMVNR0mw/maxresdefault.jpg",
